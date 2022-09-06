@@ -1,0 +1,17 @@
+.loader {
+  position: absolute;
+  top: 50vh;
+  left: calc(50vw - 50px);
+  width: 100px;
+  height: 100px;
+  border: 8px solid var(--bg-color);
+  border-radius: 50%;
+  border-left-color: var(--primary-color);
+  animation: loader 1.3s linear infinite;
+}
+
+@keyframes loader {
+  100% {
+    transform: rotate(360deg);
+  }
+}

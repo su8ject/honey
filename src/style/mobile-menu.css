@@ -1,0 +1,76 @@
+.mobile-menu {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--primary-color);
+  z-index: 2;
+  transition: 0.3s;
+}
+
+.mobile-menu-active {
+  width: 100%;
+}
+
+.mobile-menu-active .mobile-link {
+  display: block;
+}
+
+.mobile-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+}
+
+.mobile-link {
+  display: none;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: var(--size-header);
+}
+
+.mobile-link:hover {
+  opacity: 0.2;
+}
+
+.hambl {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 25px;
+}
+
+.hambl:hover {
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.6s;
+}
+
+.hambl-line {
+  background: white;
+  height: 3px;
+  transform: none;
+  transition: 0.2s;
+}
+
+.hambl.active .hambl-line:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.hambl.active .hambl-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hambl.active .hambl-line:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+@media screen and (max-width: 768px) {
+  .hambl {
+    display: flex;
+  }
+}

@@ -1,0 +1,155 @@
+@import url(../style/header.css);
+@import url(../style/reset.css);
+@import url(../style/main.css);
+@import url(../style/footer.css);
+@import url(../style/products.css);
+@import url(../style/popup.css);
+@import url(../style/mobile-menu.css);
+@import url(../style/gallery.css);
+@import url(../style/loader.css);
+
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+
+:root {
+  --active-link-color: #3f2414;
+  --size-header: 40px;
+  --size-text: 18px;
+  --color-text: black;
+  --primary-color: #d5a53c;
+  --bg-color: #fffbf0;
+}
+
+html {
+  font-family: "Lora", serif;
+}
+
+a:hover {
+  transition: 0.6s;
+}
+
+.logo--img {
+  height: 50px;
+}
+
+a .logo--img:hover {
+  opacity: 0.6;
+}
+
+.bg {
+  min-height: calc(100vh - 120px);
+  background: var(--bg-color);
+  padding: 20px;
+  padding-top: 0;
+}
+
+.active-panel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.notification {
+  text-align: center;
+  width: 150px;
+  height: 0;
+  color: var(--color-text);
+  font-size: var(--size-text);
+  transition: 0.2s;
+}
+
+.notification.active {
+  background: var(--primary-color);
+  height: 30px;
+}
+
+.theme-buttons {
+  padding-top: 20px;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+.main-theme-button,
+.additional-theme-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+
+.main-theme-button:hover,
+.additional-theme-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.main-theme-button {
+  background: #d5a53c;
+}
+
+.additional-theme-button {
+  background-color: #ad4a2b;
+}
+
+.phone-color {
+  color: black;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.primary-header {
+  font-size: var(--size-header);
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.primary-text {
+  max-width: 800px;
+  font-size: var(--size-text);
+  line-height: 25px;
+  text-align: justify;
+  color: var(--color-text);
+}
+
+.none-decoration {
+  text-decoration: none;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.form-tel {
+  margin-top: 20px;
+  font-size: var(--size-text);
+}
+
+.invalide {
+  color: #ff0000;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --size-header: 30px;
+    --size-text: 14px;
+  }
+
+  .bg {
+    padding-top: 70px;
+    min-height: calc(100vh - 50px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --size-header: 20px;
+    --size-text: 14px;
+  }
+}

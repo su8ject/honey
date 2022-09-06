@@ -1,0 +1,24 @@
+.footer {
+  background: #3f2414;
+}
+
+.footer--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.footer--social-icon {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+  fill: white;
+}
+
+.footer--social-icon:hover {
+  opacity: 0.6;
+}
