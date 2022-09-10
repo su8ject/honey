@@ -1,13 +1,11 @@
-import React from "react";
+import sprite from "../../img/sprite.svg";
 
 const Logo = () => {
   return (
     <div className="header--logo">
-      <img
-        src="/src/img/MykolaHoney-icon.svg"
-        alt="MykolaHoney"
-        className="logo--img"
-      />
+      <svg className="logo--img">
+        <use href={sprite + "#logo"}></use>
+      </svg>
       <span className="header--logo-text">MykolaHoney</span>
     </div>
   );

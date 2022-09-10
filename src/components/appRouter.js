@@ -1,8 +1,8 @@
 import { Navigate, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Delivery from "./pages/Delivery";
-import ProductsHoney from "./pages/ProductsHoney";
-import ProductsRemanent from "./pages/ProductsRemanent";
+import Index from "./pages";
+import Delivery from "./pages/delivery";
+import ProductsHoney from "./pages/productsHoney";
+import ProductsRemanent from "./pages/productsRemanent";
 
 const AppRouter = () => {
   return (
