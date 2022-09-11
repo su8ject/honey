@@ -127,14 +127,15 @@ a .logo--img:hover {
   font-weight: bold;
 }
 
-.form-tel {
-  margin-top: 20px;
-  font-size: var(--size-text);
-}
-
 .invalide {
   color: #ff0000;
   font-size: 14px;
+}
+
+.delivery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media screen and (max-width: 768px) {

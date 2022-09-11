@@ -1,7 +1,7 @@
 import ActivePanel from "../activePanel";
 import Benefits from "../benefits";
 import Comments from "../comments";
-import DemoCarousel from "../gallery";
+import GalleryCarousel from "../gallery";
 import PageTitle from "../pageTitle";
 
 const Index = () => {
@@ -14,7 +14,7 @@ const Index = () => {
       />
       <Benefits />
       <Comments />
-      <DemoCarousel />
+      <GalleryCarousel />
     </div>
   );
 };

@@ -7,7 +7,7 @@ import apiary3 from "../img/gallery/apiary-3.jpg";
 import apiary4 from "../img/gallery/apiary-4.jpg";
 import apiary5 from "../img/gallery/apiary-5.jpg";
 
-export default class DemoCarousel extends Component {
+export default class GalleryCarousel extends Component {
   render() {
     return (
       <Carousel className="foto" showStatus={false} width="50vw">
