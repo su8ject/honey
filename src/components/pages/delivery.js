@@ -1,21 +1,11 @@
-import ActivePanel from "../activePanel";
-import DeliveryAndPaymentMethod from "../deliveryAndPaymentMethod";
-import DeliveryContainer from "../deliveryContainer";
-import {
-  Input,
-  Form,
-  Button,
-  ifTheInputIsIncorret,
-  addInputValue,
-  logInput,
-  inputOnlyNumbers,
-} from "../form";
-import PageTitle from "../pageTitle";
+import { DeliveryAndPaymentMethod } from "../deliveryAndPaymentMethod";
+import { DeliveryContainer } from "../deliveryContainer";
+import { Form } from "../form";
+import { PageTitle } from "../pageTitle";
 
-const Delivery = () => {
+export const Delivery = () => {
   return (
     <div className="bg">
-      <ActivePanel />
       <PageTitle
         header={"Доставка та оплата"}
         text={
@@ -49,22 +39,8 @@ const Delivery = () => {
           action=""
           method="get"
           name="tel"
-        >
-          <Input
-            type="tel"
-            name="tel"
-            placeholder="380"
-            onBlur={() =>
-              ifTheInputIsIncorret("Введіть корректний номер телефону!")
-            }
-            onFocus={() => addInputValue("380")}
-            onInput={inputOnlyNumbers}
-          />
-          <Button type="button" onClick={logInput} />
-        </Form>
+        />
       </DeliveryContainer>
     </div>
   );
 };
-
-export default Delivery;

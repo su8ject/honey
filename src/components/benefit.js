@@ -1,6 +1,6 @@
 import sprite from "../img/sprite.svg";
 
-const Benefit = ({ header, text, svgHash }) => {
+export const Benefit = ({ header, text, svgHash }) => {
   return (
     <div className="advances--container">
       <div className="advances--box">
@@ -13,5 +13,3 @@ const Benefit = ({ header, text, svgHash }) => {
     </div>
   );
 };
-
-export default Benefit;

@@ -1,7 +1,7 @@
-import Logo from "../header/logo";
-import PhoneNumber from "../header/phoneNumber";
-import Email from "./email";
-import Inst from "./inst";
+import { Logo } from "../header/logo";
+import { PhoneNumber } from "../header/phoneNumber";
+import { Email } from "./email";
+import { Inst } from "./inst";
 
 const Footer = () => {
   return (

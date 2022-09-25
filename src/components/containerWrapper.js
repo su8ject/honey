@@ -1,4 +1,4 @@
-const ContainerWrapper = ({ children, header }) => {
+export const ContainerWrapper = ({ children, header }) => {
   return (
     <div>
       <h2 className="primary-header">{header}</h2>
@@ -6,5 +6,3 @@ const ContainerWrapper = ({ children, header }) => {
     </div>
   );
 };
-
-export default ContainerWrapper;

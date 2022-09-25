@@ -1,52 +1,61 @@
+import { useState } from "react";
 import classes from "../form/form.module.css";
 
 export const Form = ({ children, header, ...props }) => {
+  const [value, setValue] = useState("");
+  const [invalideText, setInvalideText] = useState("");
+
+  const ifTheInputIsIncorret = (text) => {
+    if (value.length !== 12) {
+      setInvalideText(text);
+    }
+  };
+
+  const addInputValue = (text) => {
+    setInvalideText("");
+    if (!value) {
+      setValue(text);
+    }
+  };
+
+  const logInput = () => {
+    if (value.length === 12) {
+      console.log(value);
+    }
+  };
+
+  const inputOnlyNumbers = ({ target: { value } }) => {
+    setValue((prev) => (/\d+/.test(Number(value)) ? value : prev));
+  };
+
   return (
     <form {...props} className={classes.formTel}>
       <label className="form-tel--label primary-text">{header}</label>
-      <div>{children}</div>
-      <div className="invalide"></div>
+      <Input
+        type="tel"
+        name="tel"
+        placeholder="380"
+        value={value}
+        onBlur={() =>
+          ifTheInputIsIncorret("Введіть корректний номер телефону!")
+        }
+        onFocus={() => addInputValue("380")}
+        onInput={inputOnlyNumbers}
+      />
+      <Button type="button" onClick={logInput} />
+      <div className="invalide">{invalideText}</div>
     </form>
   );
 };
 
-export const Input = ({ ...props }) => {
-  return <input {...props} className="form-tel--input" />;
+const Input = ({ ...props }) => {
+  return <input {...props} className="form-tel--button" />;
 };
 
-export const Button = ({ ...props }) => {
+const Button = ({ ...props }) => {
   return (
     <button {...props} className="form-tel--button">
       Відправити
     </button>
   );
-};
-
-export const ifTheInputIsIncorret = (text) => {
-  const formTelInput = document.querySelector(".form-tel--input");
-  const invalide = document.querySelector(".invalide");
-  if (formTelInput.value.length !== 12) {
-    invalide.innerHTML = text;
-  }
-};
-
-export const addInputValue = (text) => {
-  const formTelInput = document.querySelector(".form-tel--input");
-  const invalide = document.querySelector(".invalide");
-  invalide.innerHTML = "";
-  if (!formTelInput.value) {
-    formTelInput.value = text;
-  }
-};
-
-export const logInput = () => {
-  const formTelInput = document.querySelector(".form-tel--input");
-  if (formTelInput.value.length === 12) {
-    console.log(formTelInput.value);
-  }
-};
-
-export const inputOnlyNumbers = () => {
-  const formTelInput = document.querySelector(".form-tel--input");
-  formTelInput.value = formTelInput.value.replace(/\D/g, "");
 };

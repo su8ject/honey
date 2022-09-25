@@ -1,6 +1,6 @@
 import sprite from "../../img/sprite.svg";
 
-const Logo = () => {
+export const Logo = () => {
   return (
     <div className="header--logo">
       <svg className="logo--img">
@@ -10,5 +10,3 @@ const Logo = () => {
     </div>
   );
 };
-
-export default Logo;

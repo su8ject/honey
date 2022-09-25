@@ -1,6 +1,14 @@
-import { applayAdditionalTheme, applayMainTheme } from "./theme";
+export const ActivePanel = ({ setTheme }) => {
+  const applayMainTheme = () => {
+    setTheme("main-theme");
+    localStorage.setItem("theme", "main");
+  };
 
-const ActivePanel = () => {
+  const applayAdditionalTheme = () => {
+    setTheme("additional-theme");
+    localStorage.setItem("theme", "additional");
+  };
+
   return (
     <div className="active-panel">
       <div className="notification"></div>
@@ -19,5 +27,3 @@ const ActivePanel = () => {
     </div>
   );
 };
-
-export default ActivePanel;

@@ -1,28 +1,39 @@
+import { useState } from "react";
 import sprite from "../img/sprite.svg";
-import { hideMark, showMark } from "./favourite";
-import { showPopup } from "./popup";
+import { Popup } from "./popup";
 
 const ProductItem = ({ card, favouriteName }) => {
   const isAvailable = card.availability;
   const isFavourite = favouriteName.includes(card.name);
   const productsCardClasses = "products-card" + `${isAvailable ? "" : " sold"}`;
-  const favouriteIconClasses =
-    "favourite-mark" + `${isFavourite ? " temp block" : ""}`;
+  const [favouriteIconClasses, setFavouriteIconClasses] = useState(
+    "favourite-mark" + `${isFavourite ? " active temp" : ""}`
+  );
+  const [isPopupActive, setIsPopupActive] = useState(false);
+
+  const showMark = () => {
+    if (favouriteIconClasses === "favourite-mark") {
+      setFavouriteIconClasses("favourite-mark active");
+    }
+  };
+
+  const hideMark = () => {
+    if (favouriteIconClasses === "favourite-mark active") {
+      setFavouriteIconClasses("favourite-mark");
+    }
+  };
 
   const handlerMark = (event) => {
-    const nameProduct =
-      event.target.closest(".products-card").children[2].children[0].innerHTML;
-
-    event.target.closest(".favourite-mark").classList.toggle("temp");
-
-    if (favouriteName.includes(nameProduct)) {
-      favouriteName = favouriteName.filter((name) => {
-        return name !== nameProduct;
-      });
+    if (favouriteIconClasses === "favourite-mark active temp") {
+      setFavouriteIconClasses("favourite-mark active");
     } else {
-      favouriteName.push(nameProduct);
+      setFavouriteIconClasses("favourite-mark active temp");
     }
-    localStorage.setItem("favouriteName", JSON.stringify(favouriteName));
+    localStorage.setItem("favouriteName", JSON.stringify(card.name));
+  };
+
+  const showPopup = () => {
+    setIsPopupActive(true);
   };
 
   return (
@@ -44,6 +55,7 @@ const ProductItem = ({ card, favouriteName }) => {
         <span className="card-name--text">{card.name}</span>
         <span className="card-name--price">{card.price}грн</span>
       </div>
+      <Popup isPopupActive={isPopupActive} setIsPopupActive={setIsPopupActive}/>
     </div>
   );
 };

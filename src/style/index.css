@@ -14,9 +14,20 @@
   --active-link-color: #3f2414;
   --size-header: 40px;
   --size-text: 18px;
+}
+
+.main-theme {
   --color-text: black;
   --primary-color: #d5a53c;
   --bg-color: #fffbf0;
+  --footer-bg: #3f2414;
+}
+
+.additional-theme {
+  --color-text: #fffee9;
+  --primary-color: #ad4a2b;
+  --bg-color: #e78f63;
+  --footer-bg: #3d3e3b;
 }
 
 html {
@@ -47,6 +58,8 @@ a .logo--img:hover {
 .active-panel {
   display: flex;
   justify-content: space-between;
+  background: var(--bg-color);
+  padding: 0 20px;
 }
 
 .notification {

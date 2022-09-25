@@ -1,10 +1,10 @@
 import { Navigate, Routes, Route } from "react-router-dom";
-import Index from "./pages";
-import Delivery from "./pages/delivery";
-import ProductsHoney from "./pages/productsHoney";
-import ProductsRemanent from "./pages/productsRemanent";
+import { Index } from "./pages";
+import { Delivery } from "./pages/delivery";
+import { ProductsHoney } from "./pages/productsHoney";
+import { ProductsRemanent } from "./pages/productsRemanent";
 
-const AppRouter = () => {
+export const AppRouter = () => {
   return (
     <Routes>
       <Route path="/index" element={<Index />} />
@@ -15,5 +15,3 @@ const AppRouter = () => {
     </Routes>
   );
 };
-
-export default AppRouter;

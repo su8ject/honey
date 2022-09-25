@@ -1,23 +1,33 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
-import AppRouter from "./components/appRouter";
+import { ActivePanel } from "./components/activePanel";
+import { AppRouter } from "./components/appRouter";
 import Footer from "./components/footer";
 import Header from "./components/header";
-import MobileMenu from "./components/mobileMenu";
-import { loadTheme } from "./components/theme";
 import "./style/index.css";
 
 function App() {
+  const [theme, setTheme] = useState("main-theme");
+
+  const loadTheme = () => {
+    if (localStorage.getItem("theme") === "additional") {
+      setTheme("additional-theme");
+    }
+  };
+
   useEffect(() => {
     loadTheme();
   }, []);
+
   return (
-    <BrowserRouter>
-      <Header />
-      <MobileMenu />
-      <AppRouter />
-      <Footer />
-    </BrowserRouter>
+    <div className={theme}>
+      <BrowserRouter>
+        <Header />
+        <ActivePanel setTheme={setTheme} />
+        <AppRouter />
+        <Footer />
+      </BrowserRouter>
+    </div>
   );
 }
 

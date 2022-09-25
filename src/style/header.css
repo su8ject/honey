@@ -11,6 +11,10 @@
   z-index: 2;
 }
 
+.header.active {
+  position: fixed;
+}
+
 .header--logo {
   display: flex;
   align-items: center;

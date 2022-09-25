@@ -1,7 +1,7 @@
-import Benefit from "./benefit";
-import ContainerWrapper from "./containerWrapper";
+import { Benefit } from "./benefit";
+import { ContainerWrapper } from "./containerWrapper";
 
-const Benefits = () => {
+export const Benefits = () => {
   return (
     <ContainerWrapper header={"Чому купувати мед саме у мене?"}>
       <Benefit
@@ -24,5 +24,3 @@ const Benefits = () => {
     </ContainerWrapper>
   );
 };
-
-export default Benefits;

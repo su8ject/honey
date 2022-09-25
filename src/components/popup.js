@@ -1,41 +1,17 @@
-export const showPopup = (name, imgUrl, description, target) => {
-  if (
-    target.className === "products-card" ||
-    target.className === "card-name--text" ||
-    target.className === "card-name--price" ||
-    target.className === "card--img"
-  ) {
-    const popup = document.querySelector(".popup");
-    const popupTex = document.querySelector(".popup--text");
-    const popupImg = document.querySelector(".popup--img");
-    const popupDescription = document.querySelector(".popup--description");
+import { useState } from "react";
 
-    popupTex.innerHTML = name;
-    popupImg.innerHTML = `<img src=${imgUrl} class="card--img" />;`;
-    popupDescription.innerHTML = description;
-    popup.classList.add("open");
-  }
-};
+export const Popup = ({ isPopupActive, setIsPopupActive }) => {
+  const [popupClass, setPopupClass] = useState(
+    "popup" + `${isPopupActive ? " open" : ""}`
+  );
 
-const hidePopup = () => {
-  const popup = document.querySelector(".popup");
-  popup.classList.remove("open");
-};
+  const closePopup = () => {
+    setIsPopupActive(false);
+  };
 
-const closePopup = (event) => {
-  if (
-    event.target.className === "popup--cross" ||
-    event.target.className === "popup--close" ||
-    event.target.className === "popup--body"
-  ) {
-    hidePopup();
-  }
-};
-
-const Popup = () => {
   return (
-    <div className="popup">
-      <div className="popup--body" onClick={closePopup}>
+    <div className={popupClass}>
+      <div className="popup--body">
         <div className="popup--content">
           <div className="popup--header">
             <span className="card-name--text  popup--text"></span>
@@ -49,7 +25,7 @@ const Popup = () => {
             <a href="./delivery.html" className="popup--order">
               Замовити
             </a>
-            <button type="button" className="popup--close">
+            <button type="button" className="popup--close" onClick={closePopup}>
               Закрити
             </button>
           </div>
@@ -58,5 +34,3 @@ const Popup = () => {
     </div>
   );
 };
-
-export default Popup;

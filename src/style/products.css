@@ -75,7 +75,7 @@
   fill: var(--primary-color);
 }
 
-.block {
+.favourite-mark.active {
   display: block;
 }
 

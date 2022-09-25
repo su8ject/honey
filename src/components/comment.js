@@ -1,6 +1,6 @@
 import sprite from "../img/sprite.svg";
 
-const Comment = ({ comment, name }) => {
+export const Comment = ({ comment, name }) => {
   return (
     <div className="comments--container">
       <p className="primary-text">{comment}</p>
@@ -13,5 +13,3 @@ const Comment = ({ comment, name }) => {
     </div>
   );
 };
-
-export default Comment;

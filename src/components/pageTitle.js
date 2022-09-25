@@ -1,4 +1,4 @@
-const PageTitle = ({ header, text }) => {
+export const PageTitle = ({ header, text }) => {
   return (
     <section>
       <div className="wrapper">
@@ -8,5 +8,3 @@ const PageTitle = ({ header, text }) => {
     </section>
   );
 };
-
-export default PageTitle;

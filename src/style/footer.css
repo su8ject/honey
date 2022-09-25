@@ -1,5 +1,5 @@
 .footer {
-  background: #3f2414;
+  background: var(--footer-bg);
 }
 
 .footer--wrapper {

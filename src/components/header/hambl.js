@@ -1,21 +1,33 @@
-const Hambl = () => {
+import { useState } from "react";
+import { MobileMenu } from "../mobileMenu";
+
+export const Hambl = ({ setHeaderClass }) => {
+  const [hamblClass, setHamblClass] = useState("hambl");
+  const [mobileMenuClass, setMobileMenuClass] = useState("mobile-menu");
+
+  const hamblHandler = () => {
+    if (hamblClass === "hambl") {
+      setHamblClass("hambl active");
+      setMobileMenuClass("mobile-menu active");
+      setHeaderClass("header active");
+    } else {
+      setHamblClass("hambl");
+      setMobileMenuClass("mobile-menu");
+      setHeaderClass("header");
+    }
+  };
+
   return (
-    <div className="hambl" onClick={hamblHandler}>
-      <span className="hambl-line"></span>
-      <span className="hambl-line"></span>
-      <span className="hambl-line"></span>
+    <div className="hambl-wrapper">
+      <div className={hamblClass} onClick={hamblHandler}>
+        <span className="hambl-line"></span>
+        <span className="hambl-line"></span>
+        <span className="hambl-line"></span>
+      </div>
+      <MobileMenu
+        mobileMenuClass={mobileMenuClass}
+        hamblHandler={hamblHandler}
+      />
     </div>
   );
-};
-
-export default Hambl;
-
-const hamblHandler = () => {
-  const mobileMenu = document.querySelector(".mobile-menu");
-  const hambl = document.querySelector(".hambl");
-  hambl.classList.toggle("active");
-  mobileMenu.classList.toggle("mobile-menu-active");
-  mobileMenu.classList.contains("mobile-menu-active")
-    ? (document.body.style.overflow = "hidden")
-    : (document.body.style.overflow = "visible");
 };

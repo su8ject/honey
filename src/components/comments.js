@@ -1,7 +1,7 @@
-import ContainerWrapper from "./containerWrapper";
-import Comment from "./comment";
+import { ContainerWrapper } from "./containerWrapper";
+import { Comment } from "./comment";
 
-const Comments = () => {
+export const Comments = () => {
   return (
     <ContainerWrapper header={"Відгуки моїх клієнтів"}>
       <Comment
@@ -23,5 +23,3 @@ const Comments = () => {
     </ContainerWrapper>
   );
 };
-
-export default Comments;

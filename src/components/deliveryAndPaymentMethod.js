@@ -1,6 +1,6 @@
 import sprite from "../img/sprite.svg";
 
-const DeliveryAndPaymentMethod = ({ spriteHash, text }) => {
+export const DeliveryAndPaymentMethod = ({ spriteHash, text }) => {
   return (
     <div className="advances--box">
       <svg className="advances--img">
@@ -10,5 +10,3 @@ const DeliveryAndPaymentMethod = ({ spriteHash, text }) => {
     </div>
   );
 };
-
-export default DeliveryAndPaymentMethod;

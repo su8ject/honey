@@ -1,20 +1,11 @@
 import { NavLink } from "react-router-dom";
 
-const mobileMenuHandler = () => {
-  const mobileMenu = document.querySelector(".mobile-menu");
-  mobileMenu.classList.toggle("mobile-menu-active");
-};
-
-const MobileMenu = () => {
+export const MobileMenu = ({ mobileMenuClass, hamblHandler }) => {
   return (
-    <div className="mobile-menu">
+    <div className={mobileMenuClass}>
       <ul className="mobile-navigation">
         <li>
-          <NavLink
-            to="index"
-            className="mobile-link"
-            onClick={mobileMenuHandler}
-          >
+          <NavLink to="index" className="mobile-link" onClick={hamblHandler}>
             Головна
           </NavLink>
         </li>
@@ -22,7 +13,7 @@ const MobileMenu = () => {
           <NavLink
             to="products-honey"
             className="mobile-link"
-            onClick={mobileMenuHandler}
+            onClick={hamblHandler}
           >
             Продукти пасічництва
           </NavLink>
@@ -31,17 +22,13 @@ const MobileMenu = () => {
           <NavLink
             to="products-remanent"
             className="mobile-link"
-            onClick={mobileMenuHandler}
+            onClick={hamblHandler}
           >
             Реманент пасівництва
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to="delivery"
-            className="mobile-link"
-            onClick={mobileMenuHandler}
-          >
+          <NavLink to="delivery" className="mobile-link" onClick={hamblHandler}>
             Доставка
           </NavLink>
         </li>
@@ -49,5 +36,3 @@ const MobileMenu = () => {
     </div>
   );
 };
-
-export default MobileMenu;

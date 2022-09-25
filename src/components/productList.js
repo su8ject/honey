@@ -1,6 +1,6 @@
 import ProductItem from "./productItem";
 
-const ProductList = ({ cards }) => {
+export const ProductList = ({ cards }) => {
   let favouriteName = [];
   if (JSON.parse(localStorage.getItem("favouriteName"))) {
     favouriteName = JSON.parse(localStorage.getItem("favouriteName"));
@@ -17,5 +17,3 @@ const ProductList = ({ cards }) => {
     </div>
   );
 };
-
-export default ProductList;
