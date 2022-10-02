@@ -2,60 +2,56 @@ import { useState } from "react";
 import sprite from "../img/sprite.svg";
 import { Popup } from "./popup";
 
-const ProductItem = ({ card, favouriteName }) => {
+const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
   const isAvailable = card.availability;
-  const isFavourite = favouriteName.includes(card.name);
-  const productsCardClasses = "products-card" + `${isAvailable ? "" : " sold"}`;
-  const [favouriteIconClasses, setFavouriteIconClasses] = useState(
-    "favourite-mark" + `${isFavourite ? " active temp" : ""}`
+  const [isFavourite, setIsFavourite] = useState(
+    favouriteName.includes(card.name)
   );
   const [isPopupActive, setIsPopupActive] = useState(false);
 
-  const showMark = () => {
-    if (favouriteIconClasses === "favourite-mark") {
-      setFavouriteIconClasses("favourite-mark active");
-    }
-  };
-
-  const hideMark = () => {
-    if (favouriteIconClasses === "favourite-mark active") {
-      setFavouriteIconClasses("favourite-mark");
-    }
-  };
-
-  const handlerMark = (event) => {
-    if (favouriteIconClasses === "favourite-mark active temp") {
-      setFavouriteIconClasses("favourite-mark active");
+  const handlerMark = () => {
+    if (isFavourite) {
+      setFavouriteName(
+        favouriteName.filter((name) => {
+          return name !== card.name;
+        })
+      );
     } else {
-      setFavouriteIconClasses("favourite-mark active temp");
+      setFavouriteName(favouriteName.concat(card.name));
     }
-    localStorage.setItem("favouriteName", JSON.stringify(card.name));
+    setIsFavourite(!isFavourite);
   };
 
-  const showPopup = () => {
-    setIsPopupActive(true);
+  const togglePopup = () => {
+    setIsPopupActive(!isPopupActive);
   };
 
   return (
-    <div
-      className={productsCardClasses}
-      onMouseMove={showMark}
-      onMouseOut={hideMark}
-      onClick={(event) =>
-        showPopup(card.name, card.imageUrl, card.description, event.target)
-      }
-    >
-      <svg className={favouriteIconClasses} onClick={handlerMark}>
-        <use href={sprite + "#favourite-mark"}></use>
-      </svg>
-      <div>
-        <img src={card.imageUrl} className="card--img" />
+    <div>
+      <div
+        className={"products-card" + `${isAvailable ? "" : " sold"}`}
+        onClick={togglePopup}
+      >
+        <svg className="favourite-mark" onClick={handlerMark}>
+          <use
+            href={sprite + `${isFavourite ? "#favourite-mark" : "#star"}`}
+          ></use>
+        </svg>
+        <div>
+          <img src={card.imageUrl} className="card--img" />
+        </div>
+        <div className="card-name">
+          <span className="card-name--text">{card.name}</span>
+          <span className="card-name--price">{card.price}грн</span>
+        </div>
       </div>
-      <div className="card-name">
-        <span className="card-name--text">{card.name}</span>
-        <span className="card-name--price">{card.price}грн</span>
-      </div>
-      <Popup isPopupActive={isPopupActive} setIsPopupActive={setIsPopupActive}/>
+      <Popup
+        togglePopup={togglePopup}
+        isPopupActive={isPopupActive}
+        name={card.name}
+        img={card.imageUrl}
+        description={card.description}
+      />
     </div>
   );
 };

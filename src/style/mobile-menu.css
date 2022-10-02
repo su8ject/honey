@@ -1,4 +1,5 @@
 .mobile-menu {
+  display: none;
   position: fixed;
   top: 70px;
   left: 0;
@@ -11,7 +12,6 @@
 
 .mobile-menu.active {
   width: 100%;
-  overflow: hidden;
 }
 
 .mobile-menu.active .mobile-link {
@@ -37,7 +37,7 @@
   opacity: 0.2;
 }
 
-.hambl {
+.menu {
   display: none;
   flex-direction: column;
   justify-content: space-between;
@@ -45,41 +45,45 @@
   height: 25px;
 }
 
-.hambl-wrapper {
+.menu-wrapper {
   position: absolute;
 }
 
-.hambl:hover {
+.menu:hover {
   cursor: pointer;
   opacity: 0.6;
   transition: 0.6s;
 }
 
-.hambl-line {
+.menu-line {
   background: white;
   height: 3px;
   transform: none;
   transition: 0.2s;
 }
 
-.hambl.active .hambl-line:nth-child(1) {
+.menu.active .menu-line:nth-child(1) {
   transform: translateY(11px) rotate(45deg);
 }
 
-.hambl.active .hambl-line:nth-child(2) {
+.menu.active .menu-line:nth-child(2) {
   opacity: 0;
 }
 
-.hambl.active .hambl-line:nth-child(3) {
+.menu.active .menu-line:nth-child(3) {
   transform: translateY(-11px) rotate(-45deg);
 }
 
 @media screen and (max-width: 768px) {
-  .hambl {
+  .mobile-menu {
+    display: block;
+  }
+
+  .menu {
     display: flex;
   }
 
-  .hambl-wrapper {
+  .menu-wrapper {
     position: static;
   }
 }

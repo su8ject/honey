@@ -3,16 +3,16 @@ import classes from "../form/form.module.css";
 
 export const Form = ({ children, header, ...props }) => {
   const [value, setValue] = useState("");
-  const [invalideText, setInvalideText] = useState("");
+  const [invalidText, setInvalidText] = useState("");
 
-  const ifTheInputIsIncorret = (text) => {
+  const validateTel = (text) => {
     if (value.length !== 12) {
-      setInvalideText(text);
+      setInvalidText(text);
     }
   };
 
   const addInputValue = (text) => {
-    setInvalideText("");
+    setInvalidText("");
     if (!value) {
       setValue(text);
     }
@@ -31,31 +31,22 @@ export const Form = ({ children, header, ...props }) => {
   return (
     <form {...props} className={classes.formTel}>
       <label className="form-tel--label primary-text">{header}</label>
-      <Input
+      <input
         type="tel"
         name="tel"
         placeholder="380"
         value={value}
         onBlur={() =>
-          ifTheInputIsIncorret("Введіть корректний номер телефону!")
+          validateTel("Введіть корректний номер телефону!")
         }
         onFocus={() => addInputValue("380")}
         onInput={inputOnlyNumbers}
+        className="form-tel--button"
       />
-      <Button type="button" onClick={logInput} />
-      <div className="invalide">{invalideText}</div>
+      <button className="form-tel--button" type="button" onClick={logInput}>
+        Відправити
+      </button>
+      <div className="invalid">{invalidText}</div>
     </form>
-  );
-};
-
-const Input = ({ ...props }) => {
-  return <input {...props} className="form-tel--button" />;
-};
-
-const Button = ({ ...props }) => {
-  return (
-    <button {...props} className="form-tel--button">
-      Відправити
-    </button>
   );
 };

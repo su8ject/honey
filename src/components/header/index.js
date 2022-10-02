@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { Hambl } from "./hambl";
 import { Logo } from "./logo";
+import { Menu } from "./menu";
 import { Navigation } from "./navigation";
 import { PhoneNumber } from "./phoneNumber";
 
 const Header = () => {
-  const [headerClass, setHeaderClass] = useState("header");
+  const [isMenuActive, setIsMenuActive] = useState(false);
   return (
-    <div className={headerClass}>
-      <Hambl setHeaderClass={setHeaderClass} />
+    <div className={"header" + `${isMenuActive ? " active" : ""} `}>
+      <Menu isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} />
       <Logo />
       <Navigation />
       <PhoneNumber phoneNumber={380989656054} />

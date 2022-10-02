@@ -1,15 +1,15 @@
 import sprite from "../img/sprite.svg";
 
-export const Benefit = ({ header, text, svgHash }) => {
+export const Benefit = ({ benefit }) => {
   return (
     <div className="advances--container">
       <div className="advances--box">
         <svg className="advances--img">
-          <use href={sprite + `#${svgHash}`}></use>
+          <use href={sprite + `#${benefit.svgHash}`}></use>
         </svg>
-        <h3 className="advances--header">{header}</h3>
+        <h3 className="advances--header">{benefit.header}</h3>
       </div>
-      <p className="primary-text">{text}</p>
+      <p className="primary-text">{benefit.text}</p>
     </div>
   );
 };

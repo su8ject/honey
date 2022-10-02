@@ -1,10 +1,15 @@
+import { useState } from "react";
 import ProductItem from "./productItem";
 
 export const ProductList = ({ cards }) => {
-  let favouriteName = [];
-  if (JSON.parse(localStorage.getItem("favouriteName"))) {
-    favouriteName = JSON.parse(localStorage.getItem("favouriteName"));
-  }
+  const [favouriteName, setFavouriteName] = useState(
+    JSON.parse(localStorage.getItem("favouriteName"))
+      ? JSON.parse(localStorage.getItem("favouriteName"))
+      : []
+  );
+
+  localStorage.setItem("favouriteName", JSON.stringify(favouriteName));
+
   return (
     <div id="gallery">
       {cards.map((card) => (
@@ -12,6 +17,7 @@ export const ProductList = ({ cards }) => {
           card={card}
           key={card.objectId}
           favouriteName={favouriteName}
+          setFavouriteName={setFavouriteName}
         />
       ))}
     </div>

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://queenlyrain.backendless.app/api/data/";
+const baseUrl = "https://dreamycats.backendless.app/api/data/";
 
 export async function getProduct(products) {
   try {
