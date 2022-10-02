@@ -1,171 +1,171 @@
-@import url(../style/header.css);
-@import url(../style/reset.css);
-@import url(../style/main.css);
-@import url(../style/footer.css);
-@import url(../style/products.css);
-@import url(../style/popup.css);
-@import url(../style/mobile-menu.css);
-@import url(../style/gallery.css);
-@import url(../style/loader.css);
+@import url(./header.css);
+@import url(./reset.css);
+@import url(./main.css);
+@import url(./footer.css);
+@import url(./products.css);
+@import url(./popup.css);
+@import url(./mobile-menu.css);
+@import url(./gallery.css);
+@import url(./loader.css);
 
 @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 
 :root {
-  --active-link-color: #3f2414;
-  --size-header: 40px;
-  --size-text: 18px;
+    --active-link-color: #3f2414;
+    --size-header: 40px;
+    --size-text: 18px;
 }
 
 .main-theme {
-  --color-text: black;
-  --primary-color: #d5a53c;
-  --bg-color: #fffbf0;
-  --footer-bg: #3f2414;
+    --color-text: black;
+    --primary-color: #d5a53c;
+    --bg-color: #fffbf0;
+    --footer-bg: #3f2414;
 }
 
 .additional-theme {
-  --color-text: #fffee9;
-  --primary-color: #ad4a2b;
-  --bg-color: #e78f63;
-  --footer-bg: #3d3e3b;
+    --color-text: #fffee9;
+    --primary-color: #ad4a2b;
+    --bg-color: #e78f63;
+    --footer-bg: #3d3e3b;
 }
 
 html {
-  font-family: "Lora", serif;
+    font-family: "Lora", serif;
 }
 
 a:hover {
-  transition: 0.6s;
+    transition: 0.6s;
 }
 
 .logo--img {
-  height: 50px;
-  width: 50px;
-  fill: white;
+    height: 50px;
+    width: 50px;
+    fill: white;
 }
 
 a .logo--img:hover {
-  opacity: 0.6;
+    opacity: 0.6;
 }
 
 .bg {
-  min-height: calc(100vh - 120px);
-  background: var(--bg-color);
-  padding: 20px;
-  padding-top: 0;
+    min-height: calc(100vh - 120px);
+    background: var(--bg-color);
+    padding: 20px;
+    padding-top: 0;
 }
 
 .active-panel {
-  display: flex;
-  justify-content: space-between;
-  background: var(--bg-color);
-  padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    background: var(--bg-color);
+    padding: 0 20px;
 }
 
 .notification {
-  text-align: center;
-  width: 150px;
-  height: 0;
-  color: var(--color-text);
-  font-size: var(--size-text);
-  transition: 0.2s;
+    text-align: center;
+    width: 150px;
+    height: 0;
+    color: var(--color-text);
+    font-size: var(--size-text);
+    transition: 0.2s;
 }
 
 .notification.active {
-  background: var(--primary-color);
-  height: 30px;
+    background: var(--primary-color);
+    height: 30px;
 }
 
 .theme-buttons {
-  padding-top: 20px;
-  display: flex;
-  justify-content: end;
-  gap: 10px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
 }
 
 .main-theme-button,
 .additional-theme-button {
-  width: 30px;
-  height: 30px;
-  border: none;
+    width: 30px;
+    height: 30px;
+    border: none;
 }
 
 .main-theme-button:hover,
 .additional-theme-button:hover {
-  opacity: 0.6;
-  cursor: pointer;
+    opacity: 0.6;
+    cursor: pointer;
 }
 
 .main-theme-button {
-  background: #d5a53c;
+    background: #d5a53c;
 }
 
 .additional-theme-button {
-  background-color: #ad4a2b;
+    background-color: #ad4a2b;
 }
 
 .phone-color {
-  color: black;
+    color: black;
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
 .primary-header {
-  font-size: var(--size-header);
-  margin-top: 40px;
-  margin-bottom: 20px;
-  text-align: center;
-  color: var(--color-text);
+    font-size: var(--size-header);
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--color-text);
 }
 
 .primary-text {
-  max-width: 800px;
-  font-size: var(--size-text);
-  line-height: 25px;
-  text-align: justify;
-  color: var(--color-text);
+    max-width: 800px;
+    font-size: var(--size-text);
+    line-height: 25px;
+    text-align: justify;
+    color: var(--color-text);
 }
 
 .none-decoration {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .text-bold {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .invalid {
-  color: #ff0000;
-  font-size: 14px;
+    color: #ff0000;
+    font-size: 14px;
 }
 
 .delivery-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media screen and (max-width: 768px) {
-  :root {
-    --size-header: 30px;
-    --size-text: 14px;
-  }
+    :root {
+        --size-header: 30px;
+        --size-text: 14px;
+    }
 
-  .bg {
-    padding-top: 70px;
-    min-height: calc(100vh - 50px);
-  }
+    .bg {
+        padding-top: 70px;
+        min-height: calc(100vh - 50px);
+    }
 }
 
 @media screen and (max-width: 480px) {
-  :root {
-    --size-header: 20px;
-    --size-text: 14px;
-  }
+    :root {
+        --size-header: 20px;
+        --size-text: 14px;
+    }
 }
