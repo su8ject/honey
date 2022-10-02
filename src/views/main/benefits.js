@@ -1,6 +1,6 @@
-import { benefits } from "../static";
+import { benefits } from "../../static";
+import { ContainerWrapper } from "../../components/containerWrapper";
 import { Benefit } from "./benefit";
-import { ContainerWrapper } from "./containerWrapper";
 
 export const Benefits = () => {
   return (

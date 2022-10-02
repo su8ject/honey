@@ -1,7 +1,7 @@
-import { DeliveryAndPaymentMethod } from "../deliveryAndPaymentMethod";
-import { DeliveryContainer } from "../deliveryContainer";
-import { Form } from "../form";
-import { PageTitle } from "../pageTitle";
+import { DeliveryAndPaymentMethod } from "./deliveryAndPaymentMethod";
+import { DeliveryContainer } from "./deliveryContainer";
+import { Form } from "../../components/form";
+import { PageTitle } from "../../components/pageTitle";
 
 export const Delivery = () => {
   return (

@@ -1,7 +1,7 @@
-import { Benefits } from "../benefits";
-import { Comments } from "../comments";
-import { GalleryCarousel } from "../gallery";
-import { PageTitle } from "../pageTitle";
+import { PageTitle } from "../../components/pageTitle";
+import { Benefits } from "./benefits";
+import { Comments } from "./comments";
+import { GalleryCarousel } from "./gallery";
 
 export const Index = () => {
   return (

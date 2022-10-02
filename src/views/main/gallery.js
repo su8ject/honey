@@ -1,11 +1,11 @@
 import { Component } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import apiary1 from "../img/gallery/apiary-1.jpg";
-import apiary2 from "../img/gallery/apiary-2.jpg";
-import apiary3 from "../img/gallery/apiary-3.jpg";
-import apiary4 from "../img/gallery/apiary-4.jpg";
-import apiary5 from "../img/gallery/apiary-5.jpg";
+import apiary1 from "../../img/gallery/apiary-1.jpg";
+import apiary2 from "../../img/gallery/apiary-2.jpg";
+import apiary3 from "../../img/gallery/apiary-3.jpg";
+import apiary4 from "../../img/gallery/apiary-4.jpg";
+import apiary5 from "../../img/gallery/apiary-5.jpg";
 
 export class GalleryCarousel extends Component {
   render() {

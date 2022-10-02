@@ -1,6 +1,6 @@
-import { ContainerWrapper } from "./containerWrapper";
+import { ContainerWrapper } from "../../components/containerWrapper";
+import { comments } from "../../static";
 import { Comment } from "./comment";
-import { comments } from "../static";
 
 export const Comments = () => {
   return (
