@@ -4,20 +4,20 @@ import { Loader } from "../../components/loader";
 import { PageTitle } from "../../components/pageTitle";
 import { ProductList } from "../../components/productList";
 
-export const ProductsRemanent = () => {
+export const Products = ({ type }) => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
   async function fetchProducts() {
     setIsLoading(true);
-    const response = await API.getProduct("tool");
+    const response = await API.getProduct(type);
     setProducts(response);
     setIsLoading(false);
   }
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [type]);
 
   return (
     <div className="bg">
