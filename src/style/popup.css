@@ -57,8 +57,7 @@
   margin-top: 10px;
 }
 
-.popup--order,
-.popup--close {
+.popup--order {
   background-color: var(--primary-color);
   border: none;
   border-radius: 5px;
@@ -70,11 +69,6 @@
 .popup--order:hover,
 .popup--close:hover {
   opacity: 0.6;
-}
-
-.popup--close {
-  cursor: pointer;
-  font-family: "Lora", serif;
 }
 
 .popup--order {

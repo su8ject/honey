@@ -34,7 +34,7 @@ export const Popup = ({
             <Link to="/delivery" className="popup--order">
               Замовити
             </Link>
-            <button type="button" className="popup--close">
+            <button type="button" className="button">
               Закрити
             </button>
           </div>

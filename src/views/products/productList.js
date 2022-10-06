@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ProductItem from "./productItem";
+import { ProductItem } from "./productItem";
 
 export const ProductList = ({ cards }) => {
   const [favouriteName, setFavouriteName] = useState(

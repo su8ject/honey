@@ -1,8 +1,8 @@
 import { useState } from "react";
-import sprite from "../img/sprite.svg";
+import sprite from "../../img/sprite.svg";
 import { Popup } from "./popup";
 
-const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
+export const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
   const isAvailable = card.availability;
   const [isFavourite, setIsFavourite] = useState(
     favouriteName.includes(card.name)
@@ -58,5 +58,3 @@ const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
     </div>
   );
 };
-
-export default ProductItem;

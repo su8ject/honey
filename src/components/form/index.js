@@ -38,9 +38,9 @@ export const Form = ({ children, header, ...props }) => {
         onBlur={() => validateTel("Введіть корректний номер телефону!")}
         onFocus={() => addInputValue("380")}
         onInput={inputOnlyNumbers}
-        className="form-tel--button"
+        className="input"
       />
-      <button className="form-tel--button" type="button" onClick={logInput}>
+      <button className="button" type="button" onClick={logInput}>
         Відправити
       </button>
       <div className="invalid">{invalidText}</div>
