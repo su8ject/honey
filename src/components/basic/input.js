@@ -21,6 +21,7 @@ export const Input = ({
         className={inputClasses}
         value={value}
         onChange={onChange}
+        type={type}
         {...props}
       />
     );

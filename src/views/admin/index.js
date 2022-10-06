@@ -110,15 +110,29 @@ export const Admin = () => {
         <Input
           inputClasses={"input"}
           label={"Посилання на фото"}
-          labelClasses={"primary-text"}
+          labelClasses={"label"}
           value={imageUrl}
           onChange={(e) => onChange(e, "imageUrl")}
         />
+        <span className="primary-text">Тип:</span>
         <Input
           inputClasses={"input"}
-          label={"Тип"}
+          label={"Мед"}
           labelClasses={"label"}
-          value={type}
+          checked={state.type === "item" ? true : false}
+          value="item"
+          name="type"
+          type="radio"
+          onChange={(e) => onChange(e, "type")}
+        />
+        <Input
+          inputClasses={"input"}
+          label={"Реманент"}
+          labelClasses={"label"}
+          checked={state.type === "tool" ? true : false}
+          value="tool"
+          name="type"
+          type="radio"
           onChange={(e) => onChange(e, "type")}
         />
         <button className="button" onClick={onClick}>
