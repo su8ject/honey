@@ -1,13 +1,11 @@
-import sprite from "../../img/sprite.svg";
+import { Svg } from "../../components/svg";
 
 export const Comment = ({ comment }) => {
   return (
     <div className="comments--container">
       <p className="primary-text">{comment.text}</p>
       <div className="comments--box">
-        <svg className="comments--img">
-          <use href={sprite + "#chat"}></use>
-        </svg>
+        <Svg hash={"chat"} className="comments--img" />
         <span className="author">{comment.author}</span>
       </div>
     </div>

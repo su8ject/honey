@@ -1,11 +1,9 @@
-import sprite from "../../img/sprite.svg";
+import { Svg } from "../svg";
 
 export const Logo = () => {
   return (
     <div className="header--logo">
-      <svg className="logo--img">
-        <use href={sprite + "#logo"}></use>
-      </svg>
+      <Svg hash={"logo"} className="logo--img" />
       <span className="header--logo-text">MykolaHoney</span>
     </div>
   );

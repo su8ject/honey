@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Logo } from "./logo";
 import { Menu } from "./menu";
 import { Navigation } from "./navigation";
-import { PhoneNumber } from "./phoneNumber";
 
 const Header = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
@@ -11,7 +10,9 @@ const Header = () => {
       <Menu isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} />
       <Logo />
       <Navigation />
-      <PhoneNumber phoneNumber={380989656054} />
+      <a href={"tel:+380989656054"} className="phone">
+        +380989656054
+      </a>
     </div>
   );
 };

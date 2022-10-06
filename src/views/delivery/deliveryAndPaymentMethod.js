@@ -1,11 +1,9 @@
-import sprite from "../../img/sprite.svg";
+import { Svg } from "../../components/svg";
 
 export const DeliveryAndPaymentMethod = ({ spriteHash, text }) => {
   return (
     <div className="advances--box">
-      <svg className="advances--img">
-        <use href={sprite + `#${spriteHash}`}></use>
-      </svg>
+      <Svg hash={spriteHash} className="advances--img" />
       <span className="advances--header">{text}</span>
     </div>
   );
