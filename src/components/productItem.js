@@ -29,10 +29,6 @@ const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
     setIsPopupActive(true);
   };
 
-  const closePopup = () => {
-    setIsPopupActive(false);
-  };
-
   return (
     <div>
       <div
@@ -53,7 +49,7 @@ const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
         </div>
       </div>
       <Popup
-        closePopup={closePopup}
+        setIsPopupActive={setIsPopupActive}
         isPopupActive={isPopupActive}
         name={card.name}
         img={card.imageUrl}

@@ -1,14 +1,22 @@
+import { Link } from "react-router-dom";
+
 export const Popup = ({
   isPopupActive,
-  closePopup,
   name,
   description,
   img,
+  setIsPopupActive,
 }) => {
+  const closePopup = (e) => {
+    if (e.target.className === "popup--body" || e.target.tagName === "BUTTON") {
+      setIsPopupActive(false);
+    }
+  };
+
   return (
     <div
       className={"popup" + `${isPopupActive ? " open" : ""}`}
-      onClick={closePopup}
+      onClick={(e) => closePopup(e)}
     >
       <div className="popup--body">
         <div className="popup--content">
@@ -23,9 +31,9 @@ export const Popup = ({
           </div>
           <div className="popup--description">{description}</div>
           <div className="popup--buttons">
-            <a href="./delivery.html" className="popup--order">
+            <Link to="/delivery" className="popup--order">
               Замовити
-            </a>
+            </Link>
             <button type="button" className="popup--close">
               Закрити
             </button>
