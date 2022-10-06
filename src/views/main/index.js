@@ -1,6 +1,6 @@
 import { PageTitle } from "../../components/pageTitle";
-import { Benefits } from "./benefits";
-import { Comments } from "./comments";
+import { advantages, comments } from "../../static";
+import { Boxes } from "./boxes";
 import { GalleryCarousel } from "./gallery";
 
 export const Index = () => {
@@ -10,8 +10,16 @@ export const Index = () => {
         header={"Про мене"}
         text={"Доброго дня, вітаю на моєму сайті. Мене звати Микола."}
       />
-      <Benefits />
-      <Comments />
+      <Boxes
+        type={"advantages"}
+        array={advantages}
+        header={"Чому купувати мед саме у мене?"}
+      />
+      <Boxes
+        type={"comments"}
+        array={comments}
+        header={"Відгуки моїх клієнтів"}
+      />
       <GalleryCarousel />
     </div>
   );

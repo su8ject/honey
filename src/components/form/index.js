@@ -1,5 +1,4 @@
 import { useState } from "react";
-import classes from "../form/form.module.css";
 
 export const Form = ({ children, header, ...props }) => {
   const [value, setValue] = useState("");
@@ -29,16 +28,14 @@ export const Form = ({ children, header, ...props }) => {
   };
 
   return (
-    <form {...props} className={classes.formTel}>
+    <form {...props} className="formTel">
       <label className="form-tel--label primary-text">{header}</label>
       <input
         type="tel"
         name="tel"
         placeholder="380"
         value={value}
-        onBlur={() =>
-          validateTel("Введіть корректний номер телефону!")
-        }
+        onBlur={() => validateTel("Введіть корректний номер телефону!")}
         onFocus={() => addInputValue("380")}
         onInput={inputOnlyNumbers}
         className="form-tel--button"

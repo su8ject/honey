@@ -1,4 +1,4 @@
-export const benefits = [
+export const advantages = [
   {
     header: "Великий досвід",
     text: "Займаюсь бджолярством дв'ять років.",
