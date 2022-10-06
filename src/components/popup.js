@@ -1,21 +1,20 @@
 export const Popup = ({
   isPopupActive,
-  togglePopup,
+  closePopup,
   name,
   description,
   img,
 }) => {
   return (
-    <div className={"popup" + `${isPopupActive ? " open" : ""}`}>
+    <div
+      className={"popup" + `${isPopupActive ? " open" : ""}`}
+      onClick={closePopup}
+    >
       <div className="popup--body">
         <div className="popup--content">
           <div className="popup--header">
             <span className="card-name--text  popup--text">{name}</span>
-            <button
-              type="button"
-              className="popup--cross"
-              onClick={togglePopup}
-            >
+            <button type="button" className="popup--cross">
               &times;
             </button>
           </div>
@@ -27,11 +26,7 @@ export const Popup = ({
             <a href="./delivery.html" className="popup--order">
               Замовити
             </a>
-            <button
-              type="button"
-              className="popup--close"
-              onClick={togglePopup}
-            >
+            <button type="button" className="popup--close">
               Закрити
             </button>
           </div>

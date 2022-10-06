@@ -22,15 +22,22 @@ const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
     setIsFavourite(!isFavourite);
   };
 
-  const togglePopup = () => {
-    setIsPopupActive(!isPopupActive);
+  const openPopup = (e) => {
+    if (e.target.tagName === "svg" || e.target.tagName === "use") {
+      return;
+    }
+    setIsPopupActive(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupActive(false);
   };
 
   return (
     <div>
       <div
         className={"products-card" + `${isAvailable ? "" : " sold"}`}
-        onClick={togglePopup}
+        onClick={(e) => openPopup(e)}
       >
         <svg className="favourite-mark" onClick={handlerMark}>
           <use
@@ -46,7 +53,7 @@ const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
         </div>
       </div>
       <Popup
-        togglePopup={togglePopup}
+        closePopup={closePopup}
         isPopupActive={isPopupActive}
         name={card.name}
         img={card.imageUrl}
