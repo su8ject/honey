@@ -39,5 +39,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "babel-preset-react": "^6.24.1",
+    "eslint-config-backendless": "^1.0.0"
   }
 }
