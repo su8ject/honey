@@ -1,4 +1,5 @@
 export const Input = ({
+  children,
   label,
   value,
   type,
@@ -30,6 +31,7 @@ export const Input = ({
     <label className={labelClasses}>
       {label}
       {InputComponent}
+      {children}
     </label>
   );
 };

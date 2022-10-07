@@ -1,9 +1,36 @@
 import { DeliveryAndPaymentMethod } from "./deliveryAndPaymentMethod";
 import { DeliveryContainer } from "./deliveryContainer";
-import { Form } from "../../components/form";
 import { PageTitle } from "../../components/pageTitle";
+import { Input } from "../../components/basic";
+import { useState } from "react";
+import { delivery, paymentMethod } from "../../static";
 
 export const Delivery = () => {
+  const [value, setValue] = useState("");
+  const [invalidText, setInvalidText] = useState("");
+
+  const inputOnlyNumbers = ({ target: { value } }) => {
+    setValue((prev) => (/\d+/.test(Number(value)) ? value : prev));
+  };
+
+  const validateTel = (text) => {
+    if (value.length !== 12) {
+      setInvalidText(text);
+    }
+  };
+
+  const addInputValue = (text) => {
+    setInvalidText("");
+    if (!value) {
+      setValue(text);
+    }
+  };
+
+  const logInput = () => {
+    if (value.length === 12) {
+      console.log(value);
+    }
+  };
   return (
     <div className="bg">
       <PageTitle
@@ -13,33 +40,45 @@ export const Delivery = () => {
         }
       />
       <DeliveryContainer header={"Способи доставки"}>
-        <DeliveryAndPaymentMethod
-          spriteHash={"bike"}
-          text={"Доставка по м. Житомир безкоштовна"}
-        />
-        <DeliveryAndPaymentMethod
-          spriteHash={"package"}
-          text={"Доставка в інші міста за Ваш рахунок"}
-        />
+        {delivery.map((item, id) => (
+          <DeliveryAndPaymentMethod
+            key={id}
+            spriteHash={item.svgHash}
+            text={item.text}
+          />
+        ))}
       </DeliveryContainer>
       <DeliveryContainer header={"Способи оплати"}>
-        <DeliveryAndPaymentMethod spriteHash={"money"} text={"Готівкою"} />
-        <DeliveryAndPaymentMethod
-          spriteHash={"card"}
-          text={"Банківською картою"}
-        />
+        {paymentMethod.map((item, id) => (
+          <DeliveryAndPaymentMethod
+            key={id}
+            spriteHash={item.svgHash}
+            text={item.text}
+          />
+        ))}
       </DeliveryContainer>
       <DeliveryContainer header={"Залишилися питання?"}>
         <p className="primary-text">
           Якщо у Вас залишилися питання, залиште свій номер телефону і я
           зателефоную вам.
         </p>
-        <Form
-          header={"Введіть Ваш номер телефону"}
-          action=""
-          method="get"
-          name="tel"
-        />
+        <Input
+          label={"Введіть Ваш номер телефону"}
+          type={"tel"}
+          onChange={inputOnlyNumbers}
+          inputClasses={"input"}
+          labelClasses={"label"}
+          onBlur={() => validateTel("Введіть корректний номер телефону!")}
+          value={value}
+          onFocus={() => addInputValue("380")}
+          placeholder="380"
+        >
+          <button className="button" type="button" onClick={logInput}>
+            Відправити
+          </button>
+        </Input>
+
+        <div className="invalid">{invalidText}</div>
       </DeliveryContainer>
     </div>
   );
