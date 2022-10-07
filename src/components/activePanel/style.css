@@ -1,0 +1,48 @@
+.active-panel {
+  display: flex;
+  justify-content: space-between;
+  background: var(--bg-color);
+  padding: 0 20px;
+}
+
+.notification {
+  text-align: center;
+  width: 150px;
+  height: 0;
+  color: var(--color-text);
+  font-size: var(--size-text);
+  transition: 0.2s;
+}
+
+.notification.active {
+  background: var(--primary-color);
+  height: 30px;
+}
+
+.theme-buttons {
+  padding-top: 20px;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+.main-theme-button,
+.additional-theme-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+
+.main-theme-button:hover,
+.additional-theme-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.main-theme-button {
+  background: #d5a53c;
+}
+
+.additional-theme-button {
+  background-color: #ad4a2b;
+}

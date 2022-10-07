@@ -1,13 +1,11 @@
-@import url(./header.css);
 @import url(./reset.css);
-@import url(./main.css);
-@import url(./footer.css);
-@import url(./products.css);
-@import url(./popup.css);
-@import url(./mobile-menu.css);
-@import url(./gallery.css);
-@import url(./loader.css);
-
+@import url(../components/footer/style.css);
+@import url(../components/header/style.css);
+@import url(../components/activePanel/style.css);
+@import url(../components/loader/style.css);
+@import url(../components/mobileMenu/style.css);
+@import url(../views/main/style.css);
+@import url(../views/products/style.css);
 @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 
 :root {
@@ -55,53 +53,13 @@ a .logo--img:hover {
   padding-top: 0;
 }
 
-.active-panel {
-  display: flex;
-  justify-content: space-between;
-  background: var(--bg-color);
-  padding: 0 20px;
-}
-
-.notification {
-  text-align: center;
-  width: 150px;
-  height: 0;
-  color: var(--color-text);
+.phone {
+  color: white;
   font-size: var(--size-text);
-  transition: 0.2s;
 }
 
-.notification.active {
-  background: var(--primary-color);
-  height: 30px;
-}
-
-.theme-buttons {
-  padding-top: 20px;
-  display: flex;
-  justify-content: end;
-  gap: 10px;
-}
-
-.main-theme-button,
-.additional-theme-button {
-  width: 30px;
-  height: 30px;
-  border: none;
-}
-
-.main-theme-button:hover,
-.additional-theme-button:hover {
+.phone:hover {
   opacity: 0.6;
-  cursor: pointer;
-}
-
-.main-theme-button {
-  background: #d5a53c;
-}
-
-.additional-theme-button {
-  background-color: #ad4a2b;
 }
 
 .phone-color {
@@ -180,10 +138,22 @@ a .logo--img:hover {
   align-items: center;
 }
 
+.main--header {
+  color: black;
+  font-size: 50px;
+  margin: 20px;
+  text-align: center;
+  color: var(--color-text);
+}
+
 @media screen and (max-width: 768px) {
   :root {
     --size-header: 30px;
     --size-text: 14px;
+  }
+
+  .main--header {
+    font-size: 40px;
   }
 
   .bg {
@@ -196,5 +166,9 @@ a .logo--img:hover {
   :root {
     --size-header: 20px;
     --size-text: 14px;
+  }
+
+  .main--header {
+    font-size: 30px;
   }
 }

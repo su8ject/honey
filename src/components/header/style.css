@@ -6,7 +6,7 @@
   gap: 10px 20px;
   width: 100%;
   padding: 10px;
-  background: url(../img/header-bg.jpg) center no-repeat;
+  background: url(../../img/header-bg.jpg) center no-repeat;
   background-size: cover;
   z-index: 2;
 }
@@ -38,8 +38,7 @@
   gap: 10px 20px;
 }
 
-.header--link,
-.phone {
+.header--link {
   color: white;
   font-size: var(--size-text);
 }
@@ -53,8 +52,23 @@
   color: var(--active-link-color);
 }
 
-.phone:hover {
-  opacity: 0.6;
+.menu-line {
+  background: white;
+  height: 3px;
+  transform: none;
+  transition: 0.2s;
+}
+
+.menu.active .menu-line:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.menu.active .menu-line:nth-child(2) {
+  opacity: 0;
+}
+
+.menu.active .menu-line:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
 }
 
 @media screen and (max-width: 768px) {

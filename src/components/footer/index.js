@@ -1,7 +1,7 @@
 import { Logo } from "../header/logo";
 import { Svg } from "../svg";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <div className="footer">
       <div className="footer--wrapper">
@@ -22,5 +22,3 @@ const Footer = () => {
     </div>
   );
 };
-
-export default Footer;

@@ -11,7 +11,7 @@ export const ProductList = ({ cards }) => {
   localStorage.setItem("favouriteName", JSON.stringify(favouriteName));
 
   return (
-    <div id="gallery">
+    <div className="gallery">
       {cards.map((card) => (
         <ProductItem
           card={card}

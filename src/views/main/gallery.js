@@ -10,7 +10,7 @@ import apiary5 from "../../img/gallery/apiary-5.jpg";
 export class GalleryCarousel extends Component {
   render() {
     return (
-      <Carousel className="foto" showStatus={false} width="50vw">
+      <Carousel className="photo" showStatus={false} width="50vw">
         <div>
           <img src={apiary1} />
         </div>

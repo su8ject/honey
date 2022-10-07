@@ -3,7 +3,7 @@ import { Logo } from "./logo";
 import { Menu } from "./menu";
 import { Navigation } from "./navigation";
 
-const Header = () => {
+export const Header = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   return (
     <div className={"header" + `${isMenuActive ? " active" : ""} `}>
@@ -16,5 +16,3 @@ const Header = () => {
     </div>
   );
 };
-
-export default Header;
