@@ -11,8 +11,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "[hash].bundle.js",
-    path: path.resolve(__dirname, "dist/assets"),
-    publicPath: "/",
+    path: path.resolve(__dirname, "dist"),
   },
   optimization: {
     minimize: true,
@@ -34,7 +33,11 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, "public/favicon.ico"),
-          to: path.resolve(__dirname, "dist/assets"),
+          to: path.resolve(__dirname, "dist"),
+        },
+        {
+          from: path.resolve(__dirname, "public/_redirects"),
+          to: path.resolve(__dirname, "dist"),
         },
       ],
     }),
@@ -60,7 +63,14 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "img/[hash]",
+        },
+      },
+      {
+        test: /\.(jpg)$/,
         use: "file-loader",
       },
       {
