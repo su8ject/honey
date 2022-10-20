@@ -55,14 +55,29 @@
   font-size: 21px;
 }
 
+.slider {
+  width: 500px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media screen and (max-width: 768px) {
   .box--header {
     font-size: 18px;
+  }
+
+  .slider {
+    width: 400px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .box--header {
     font-size: 14px;
+  }
+
+  .slider {
+    width: 300px;
   }
 }

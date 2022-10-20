@@ -1,7 +1,7 @@
 import { PageTitle } from "../../components/pageTitle";
 import { advantages, comments } from "../../static";
 import { Boxes } from "./boxes";
-import { GalleryCarousel } from "./gallery";
+import { Slider } from "./slider";
 
 export const Index = () => {
   return (
@@ -20,7 +20,7 @@ export const Index = () => {
         array={comments}
         header={"Відгуки моїх клієнтів"}
       />
-      <GalleryCarousel />
+      <Slider />
     </div>
   );
 };

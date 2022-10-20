@@ -157,7 +157,6 @@ a .logo--img:hover {
   }
 
   .bg {
-    padding-top: 70px;
     min-height: calc(100vh - 50px);
   }
 }
