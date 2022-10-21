@@ -21,7 +21,9 @@ export const Products = ({ type }) => {
 
   return (
     <div className="bg">
-      <PageTitle header={"Продукти пасічництва"} />
+      <PageTitle
+        header={`${type === "item" ? "Продукти пасічництва" : "Реманент"}`}
+      />
       {isLoading ? <Loader /> : <ProductList cards={products} />}
     </div>
   );

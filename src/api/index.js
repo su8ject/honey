@@ -14,9 +14,20 @@ const API = {
 
     const query = Backendless.DataQueryBuilder.create()
       .setWhereClause(`type = '${type}'`)
+      .setSortBy(["availability DESC", "name"])
       .setPageSize(100);
 
     return Backendless.Data.of(Tables.GOODS).find(query);
+  },
+
+  removeProduct: (id) => Backendless.Data.of(Tables.GOODS).remove(id),
+
+  saveComment: (comment) => Backendless.Data.of(Tables.COMMENTS).save(comment),
+
+  getComment: () => {
+    const query = Backendless.DataQueryBuilder.create().setPageSize(100);
+
+    return Backendless.Data.of(Tables.COMMENTS).find(query);
   },
 };
 

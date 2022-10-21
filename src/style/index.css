@@ -74,6 +74,7 @@ a .logo--img:hover {
 .wrapper {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   align-items: center;
   margin: 0 auto;
   max-width: 1200px;
@@ -94,10 +95,6 @@ a .logo--img:hover {
   line-height: 25px;
   text-align: justify;
   color: var(--color-text);
-}
-
-.label {
-  margin: 10px;
 }
 
 .none-decoration {
@@ -144,6 +141,13 @@ a .logo--img:hover {
   margin: 20px;
   text-align: center;
   color: var(--color-text);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 768px) {
