@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className={theme}>
-      <BrowserRouter basename="/dist">
+      <BrowserRouter basename="/honey/dist">
         <Header />
         <ActivePanel setTheme={setTheme} />
         <AppRouter />
