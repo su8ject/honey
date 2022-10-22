@@ -35,10 +35,6 @@ module.exports = {
           from: path.resolve(__dirname, "public/favicon.ico"),
           to: path.resolve(__dirname, "dist"),
         },
-        {
-          from: path.resolve(__dirname, "public/_redirects"),
-          to: path.resolve(__dirname, "dist"),
-        },
       ],
     }),
     new MiniCssExtractPlugin({

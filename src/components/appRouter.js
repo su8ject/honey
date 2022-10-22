@@ -7,12 +7,12 @@ import { Products } from "../views/products";
 export const AppRouter = () => {
   return (
     <Routes>
-      <Route exact path="/" element={<Index />} />
-      <Route path="/products-honey" element={<Products type={"item"} />} />
-      <Route path="/products-remanent" element={<Products type={"tool"} />} />
-      <Route path="/delivery" element={<Delivery />} />
-      <Route path="/admin" element={<Admin />} />
-      <Route path="*" element={<Navigate to="/index" />} />
+      <Route index element={ <Index/> }/>
+      <Route path="/products-honey" element={ <Products type={ "item" }/> }/>
+      <Route path="/products-remanent" element={ <Products type={ "tool" }/> }/>
+      <Route path="/delivery" element={ <Delivery/> }/>
+      <Route path="/admin" element={ <Admin/> }/>
+      <Route path="*" element={ <Index/> }/>
     </Routes>
   );
 };
