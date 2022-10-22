@@ -11,6 +11,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "[hash].bundle.js",
+    publicPath: "/honey/dist",
     path: path.resolve(__dirname, "dist"),
   },
   optimization: {
