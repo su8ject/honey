@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { ActivePanel } from "./components/activePanel";
 import { AppRouter } from "./components/appRouter";
 import { Footer } from "./components/footer";
@@ -21,12 +21,12 @@ function App() {
 
   return (
     <div className={theme}>
-      <BrowserRouter basename="/honey/dist">
+      <HashRouter>
         <Header />
         <ActivePanel setTheme={setTheme} />
         <AppRouter />
         <Footer />
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
