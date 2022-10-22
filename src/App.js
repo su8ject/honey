@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className={theme}>
-      <BrowserRouter>
+      <BrowserRouter basename="/dist">
         <Header />
         <ActivePanel setTheme={setTheme} />
         <AppRouter />
