@@ -12,7 +12,7 @@
 }
 
 .header.active {
-  position: relative;
+  position: fixed;
 }
 
 .header--logo {
