@@ -7,16 +7,16 @@
 
 .notification {
   text-align: center;
-  width: 150px;
   height: 0;
   color: var(--color-text);
   font-size: var(--size-text);
   transition: 0.2s;
+  border-radius: 5px;
 }
 
 .notification.active {
   background: var(--primary-color);
-  height: 30px;
+  height: 46px;
 }
 
 .theme-buttons {
@@ -45,4 +45,10 @@
 
 .additional-theme-button {
   background-color: #ad4a2b;
+}
+
+@media screen and (max-width: 768px) {
+  .notification.active {
+    height: 36px;
+  }
 }

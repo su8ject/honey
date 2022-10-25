@@ -14,6 +14,7 @@ const newComment = {
 export const Index = () => {
   const [comment, setComment] = useState(newComment);
   const [comments, setComments] = useState([]);
+  const [active, setActive] = useState(false);
 
   const fetchComments = async () => {
     const response = await API.getComment(true);
@@ -43,7 +44,10 @@ export const Index = () => {
     if (isValid) {
       await saveComment(comment);
     }
-    console.log(comment);
+
+    setActive(true);
+
+    setTimeout(() => setActive(false), 2000);
   }, [saveComment, comment]);
 
   const onChange = (e, field) => {
@@ -76,6 +80,11 @@ export const Index = () => {
       )}
       <div className="wrapper-input">
         <h2 className="primary-header">Додайте коментар</h2>
+        <span className={active ? "notification active" : "notification"}>
+          {active
+            ? "Ваш коментар збережено та буде розміщений після модерації."
+            : ""}
+        </span>
         <Textarea
           textareaClasses={"input"}
           label={"Комментар:"}
