@@ -1,22 +1,31 @@
-// import AwesomeSlider from "react-awesome-slider";
-// import AwesomeSliderStyles from "react-awesome-slider/src/styles";
-// import "react-awesome-slider/dist/custom-animations/cube-animation.css";
-// import apiary1 from "../../img/gallery/apiary-1.jpg";
-// import apiary2 from "../../img/gallery/apiary-2.jpg";
-// import apiary3 from "../../img/gallery/apiary-3.jpg";
-// import apiary4 from "../../img/gallery/apiary-4.jpg";
-// import apiary5 from "../../img/gallery/apiary-5.jpg";
+import SwiftSlider from "react-swift-slider";
 
 export const Slider = () => {
+  const data = [
+    {
+      id: "1",
+      src: "https://dreamycats.backendless.app/api/files/img/apiary-1.jpg",
+    },
+    {
+      id: "2",
+      src: "https://dreamycats.backendless.app/api/files/img/apiary-2.jpg",
+    },
+    {
+      id: "3",
+      src: "https://dreamycats.backendless.app/api/files/img/apiary-3.jpg",
+    },
+    {
+      id: "4",
+      src: "https://dreamycats.backendless.app/api/files/img/apiary-4.jpg",
+    },
+    {
+      id: "5",
+      src: "https://dreamycats.backendless.app/api/files/img/apiary-5.jpg",
+    },
+  ];
   return (
     <div className="slider">
-      {/*<AwesomeSlider cssModule={AwesomeSliderStyles} bullets={false}>*/}
-      {/*  <div data-src={apiary1} />*/}
-      {/*  <div data-src={apiary2} />*/}
-      {/*  <div data-src={apiary3} />*/}
-      {/*  <div data-src={apiary4} />*/}
-      {/*  <div data-src={apiary5} />*/}
-      {/*</AwesomeSlider>*/}
+      <SwiftSlider data={data} showDots={false} />
     </div>
   );
 };
