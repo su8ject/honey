@@ -6,6 +6,7 @@
 @import url(../components/mobileMenu/style.css);
 @import url(../views/main/style.css);
 @import url(../views/products/style.css);
+@import url(../views/admin/style.css);
 @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
 
 :root {

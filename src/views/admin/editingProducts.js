@@ -1,6 +1,7 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { API } from "../../api";
 import { Input } from "../../components/basic";
+import { FormProduct } from "./formProduct";
 import { ProductListAdmin } from "./productListAdmin";
 
 const defaultState = {
@@ -57,41 +58,14 @@ export const EditingProducts = ({ setError }) => {
 
   return (
     <div className="wrapper">
-      <Input
-        inputClasses={"input"}
-        label={"Назва"}
-        labelClasses={"label"}
-        value={name}
-        onChange={(e) => onChange(e, "name")}
-      />
-      <Input
-        inputClasses={"input"}
-        label={"Опис"}
-        labelClasses={"label"}
-        value={description}
-        onChange={(e) => onChange(e, "description")}
-      />
-      <Input
-        inputClasses={"input"}
-        label={"Ціна"}
-        value={price}
-        labelClasses={"label"}
-        onChange={(e) => onChange(e, "price")}
-      />
-      <Input
-        inputClasses={"input"}
-        type="checkbox"
-        label={"Наявність"}
-        labelClasses={"label"}
-        value={availability}
-        onChange={onCheckboxChange}
-      />
-      <Input
-        inputClasses={"input"}
-        label={"Посилання на фото"}
-        labelClasses={"label"}
-        value={imageUrl}
-        onChange={(e) => onChange(e, "imageUrl")}
+      <FormProduct
+        name={name}
+        description={description}
+        price={price}
+        availability={availability}
+        imageUrl={imageUrl}
+        onChange={onChange}
+        onCheckboxChange={onCheckboxChange}
       />
       <span className="primary-text">Тип:</span>
       <Input

@@ -12,16 +12,12 @@ export const ProductListAdmin = ({ type }) => {
 
   useEffect(() => {
     fetchProducts();
-  }, [type]);
+  }, []);
 
   return (
     <div className="gallery">
       {products.map((product) => (
-        <ProductItemAdmin
-          product={product}
-          key={product.objectId}
-          fetchProducts={fetchProducts}
-        />
+        <ProductItemAdmin product={product} key={product.objectId} />
       ))}
     </div>
   );
