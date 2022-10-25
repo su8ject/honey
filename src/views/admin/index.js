@@ -38,9 +38,11 @@ export const Admin = () => {
         </button>
       </div>
       {view === "products" ? (
-        <EditingProducts setError={setError} />
-      ) : (
+        <EditingProducts />
+      ) : view === "comments" ? (
         <Comments />
+      ) : (
+        <div className="wrapper"></div>
       )}
     </div>
   );

@@ -1,36 +1,56 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { API } from "../../api";
 import { Input, Textarea } from "../../components/basic";
 import { PageTitle } from "../../components/pageTitle";
-import { advantages, comments } from "../../static";
+import { advantages } from "../../static";
 import { Boxes } from "./boxes";
 import { Slider } from "./slider";
 
 const newComment = {
-  author: "",
-  text: "",
+  name: "",
+  content: "",
 };
 
 export const Index = () => {
   const [comment, setComment] = useState(newComment);
+  const [comments, setComments] = useState([]);
 
-  const validate = ({ author, text }) => {
-    return author && text;
+  const fetchComments = async () => {
+    const response = await API.getComment(true);
+    setComments(response);
   };
 
-  const onClick = (e) => {
-    const isValid = validate(comment);
-    if (isValid) {
-      comments.push(comment);
+  useEffect(() => {
+    fetchComments();
+  }, []);
+
+  const validate = ({ name, content }) => {
+    return name && content;
+  };
+
+  const saveComment = useCallback(async (comment) => {
+    try {
+      await API.saveComment(comment);
+      setComment(newComment);
+    } catch (error) {
+      console.log(error.message);
     }
-    setComment(newComment);
-  };
+  }, []);
+
+  const onClick = useCallback(async () => {
+    const isValid = validate(comment);
+
+    if (isValid) {
+      await saveComment(comment);
+    }
+    console.log(comment);
+  }, [saveComment, comment]);
 
   const onChange = (e, field) => {
     setComment((comment) => ({ ...comment, [field]: e.target.value }));
   };
 
-  const { author, text } = comment;
-  console.log(!!comments[0]);
+  const { name, content } = comment;
 
   return (
     <div className="bg">
@@ -61,15 +81,15 @@ export const Index = () => {
           label={"Комментар:"}
           labelClasses={"comment-label"}
           rows="5"
-          onChange={(e) => onChange(e, "text")}
-          value={text}
+          onChange={(e) => onChange(e, "content")}
+          value={content}
         />
         <Input
           inputClasses={"input"}
           label={"Ім’я та прізвище:"}
           labelClasses={"comment-label"}
-          value={author}
-          onChange={(e) => onChange(e, "author")}
+          value={name}
+          onChange={(e) => onChange(e, "name")}
         />
         <button className="comment-button" onClick={onClick}>
           Відправити

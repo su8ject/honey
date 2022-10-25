@@ -1,6 +1,13 @@
-.form-product {
+.form-product,
+.comment-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+}
+
+.comment-box {
+  padding: 20px;
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
 }

@@ -14,10 +14,10 @@ export const Box = ({ type, item }) => {
   } else {
     return (
       <div className="comments--container">
-        <p className="primary-text">{item.text}</p>
+        <p className="primary-text">{item.content}</p>
         <div className="comments--box">
           <Svg hash={"chat"} className="box--img" />
-          <span className="box--header">{item.author}</span>
+          <span className="box--header">{item.name}</span>
         </div>
       </div>
     );

@@ -5,10 +5,10 @@ import { ProductItemAdmin } from "./productItemAdmin";
 export const ProductListAdmin = ({ type }) => {
   const [products, setProducts] = useState([]);
 
-  async function fetchProducts() {
+  const fetchProducts = async () => {
     const response = await API.getProduct(type);
     setProducts(response);
-  }
+  };
 
   useEffect(() => {
     fetchProducts();

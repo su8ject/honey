@@ -13,14 +13,14 @@ const defaultState = {
   type: "item",
 };
 
-export const EditingProducts = ({ setError }) => {
+export const EditingProducts = () => {
   const [state, setState] = useState(defaultState);
 
   const validate = ({ name, description, price, imageUrl }) => {
     try {
       new URL(imageUrl);
     } catch {
-      setError("Invalid URL");
+      console.log("Invalid URL");
 
       return false;
     }
@@ -28,18 +28,15 @@ export const EditingProducts = ({ setError }) => {
     return name && description && price && imageUrl && type;
   };
 
-  const saveProduct = useCallback(
-    async (state) => {
-      try {
-        await API.saveProduct(state);
+  const saveProduct = useCallback(async (state) => {
+    try {
+      await API.saveProduct(state);
 
-        setState(defaultState);
-      } catch (error) {
-        setError(error.message);
-      }
-    },
-    [setError]
-  );
+      setState(defaultState);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }, []);
 
   const onChange = (e, field) =>
     setState((state) => ({ ...state, [field]: e.target.value }));

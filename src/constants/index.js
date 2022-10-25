@@ -1,10 +1,11 @@
 const ProductTypes = {
-  TOOL: 'tool',
-  ITEM: 'item'
-}
+  TOOL: "tool",
+  ITEM: "item",
+};
 
 const Tables = {
-  GOODS: 'Goods'
-}
+  GOODS: "Goods",
+  COMMENTS: "Comments",
+};
 
-export { Tables, ProductTypes }
+export { Tables, ProductTypes };

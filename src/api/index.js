@@ -24,11 +24,23 @@ const API = {
 
   saveComment: (comment) => Backendless.Data.of(Tables.COMMENTS).save(comment),
 
-  getComment: () => {
-    const query = Backendless.DataQueryBuilder.create().setPageSize(100);
+  getComment: (accepted) => {
+    if (accepted) {
+      const query = Backendless.DataQueryBuilder.create()
+        .setWhereClause(`accepted = true`)
+        .setPageSize(100);
 
-    return Backendless.Data.of(Tables.COMMENTS).find(query);
+      return Backendless.Data.of(Tables.COMMENTS).find(query);
+    } else {
+      const query = Backendless.DataQueryBuilder.create()
+        .setWhereClause(`accepted = false`)
+        .setPageSize(100);
+
+      return Backendless.Data.of(Tables.COMMENTS).find(query);
+    }
   },
+
+  removeComment: (id) => Backendless.Data.of(Tables.COMMENTS).remove(id),
 };
 
 export { API };
