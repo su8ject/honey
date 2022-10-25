@@ -38,7 +38,7 @@ export const FormProduct = ({
         label={"Наявність"}
         labelClasses={"label"}
         value={availability}
-        onChange={onCheckboxChange}
+        onChange={(e) => onCheckboxChange(e)}
       />
       <Input
         inputClasses={"input"}

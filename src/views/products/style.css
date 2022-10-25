@@ -122,15 +122,7 @@
 .card-name--price {
   font-size: var(--size-text);
   font-weight: bold;
-}
-
-.card-name--text {
   color: var(--color-text);
-}
-
-.card-name--price {
-  color: #607025;
-  text-align: end;
 }
 
 .sold {

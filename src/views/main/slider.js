@@ -1,31 +1,21 @@
-import SwiftSlider from "react-swift-slider";
+import Carousel from "react-gallery-carousel";
+import "react-gallery-carousel/dist/index.css";
 
 export const Slider = () => {
-  const data = [
-    {
-      id: "1",
-      src: "https://dreamycats.backendless.app/api/files/img/apiary-1.jpg",
-    },
-    {
-      id: "2",
-      src: "https://dreamycats.backendless.app/api/files/img/apiary-2.jpg",
-    },
-    {
-      id: "3",
-      src: "https://dreamycats.backendless.app/api/files/img/apiary-3.jpg",
-    },
-    {
-      id: "4",
-      src: "https://dreamycats.backendless.app/api/files/img/apiary-4.jpg",
-    },
-    {
-      id: "5",
-      src: "https://dreamycats.backendless.app/api/files/img/apiary-5.jpg",
-    },
-  ];
+  const images = [1, 2, 3, 4, 5].map((number) => ({
+    src: `https://dreamycats.backendless.app/api/files/img/apiary-${number}.jpg`,
+  }));
   return (
     <div className="slider">
-      <SwiftSlider data={data} showDots={false} />
+      <Carousel
+        className="slider"
+        images={images}
+        isMaximized={false}
+        hasSizeButton={false}
+        hasMediaButton={false}
+        hasIndexBoard={false}
+        hasThumbnails={false}
+      />
     </div>
   );
 };
