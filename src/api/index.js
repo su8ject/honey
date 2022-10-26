@@ -8,16 +8,20 @@ const API = {
   saveProduct: (product) => Backendless.Data.of(Tables.GOODS).save(product),
 
   getProduct: (type) => {
-    if (!type) {
-      throw new Error("Type must be provided!");
+    if (type) {
+      const query = Backendless.DataQueryBuilder.create()
+        .setWhereClause(`type = '${type}'`)
+        .setSortBy(["availability DESC", "name"])
+        .setPageSize(100);
+
+      return Backendless.Data.of(Tables.GOODS).find(query);
+    } else {
+      const query = Backendless.DataQueryBuilder.create()
+        .setSortBy(["availability DESC", "name"])
+        .setPageSize(100);
+
+      return Backendless.Data.of(Tables.GOODS).find(query);
     }
-
-    const query = Backendless.DataQueryBuilder.create()
-      .setWhereClause(`type = '${type}'`)
-      .setSortBy(["availability DESC", "name"])
-      .setPageSize(100);
-
-    return Backendless.Data.of(Tables.GOODS).find(query);
   },
 
   removeProduct: (id) => Backendless.Data.of(Tables.GOODS).remove(id),

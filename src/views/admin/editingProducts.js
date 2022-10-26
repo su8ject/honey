@@ -15,6 +15,16 @@ const defaultState = {
 
 export const EditingProducts = () => {
   const [state, setState] = useState(defaultState);
+  const [products, setProducts] = useState([]);
+
+  const fetchProducts = async () => {
+    const response = await API.getProduct("");
+    setProducts(response);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   const validate = ({ name, description, price, imageUrl }) => {
     try {
@@ -51,6 +61,8 @@ export const EditingProducts = () => {
     if (isValid) {
       await saveProduct(state);
     }
+
+    fetchProducts();
   }, [saveProduct, state]);
 
   return (
@@ -89,9 +101,15 @@ export const EditingProducts = () => {
         Додати товар
       </button>
       <h2 className="primary-header">Мед</h2>
-      <ProductListAdmin type={"item"} />
+      <ProductListAdmin
+        products={products.filter((product) => product.type === "item")}
+        fetchProducts={fetchProducts}
+      />
       <h2 className="primary-header">Реманент</h2>
-      <ProductListAdmin type={"tool"} />
+      <ProductListAdmin
+        products={products.filter((product) => product.type === "tool")}
+        fetchProducts={fetchProducts}
+      />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { API } from "../../api";
 import { FormProduct } from "./formProduct";
 
-export const ProductItemAdmin = ({ product }) => {
+export const ProductItemAdmin = ({ product, fetchProducts }) => {
   const [state, setState] = useState(product);
 
   const onChange = (e, field) => {
@@ -41,6 +41,7 @@ export const ProductItemAdmin = ({ product }) => {
 
   const removeProduct = async (id) => {
     await API.removeProduct({ objectId: id });
+    fetchProducts();
   };
 
   return (
