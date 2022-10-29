@@ -78,28 +78,27 @@ export const Index = () => {
       ) : (
         <h2 className="primary-header">Коментарі відсутні</h2>
       )}
+
+      <h2 className="primary-header">Додайте коментар</h2>
       <div className="wrapper-input">
-        <h2 className="primary-header">Додайте коментар</h2>
         <span className={active ? "notification active" : "notification"}>
           {active
             ? "Ваш коментар збережено та буде розміщений після модерації."
             : ""}
         </span>
-        <Textarea
-          textareaClasses={"input"}
-          label={"Комментар:"}
-          labelClasses={"comment-label"}
+        <textarea
+          placeholder="Коментар"
+          className="input"
           rows="5"
           onChange={(e) => onChange(e, "content")}
           value={content}
-        />
-        <Input
-          inputClasses={"input"}
-          label={"Ім’я та прізвище:"}
-          labelClasses={"comment-label"}
+        ></textarea>
+        <input
+          className="input"
           value={name}
           onChange={(e) => onChange(e, "name")}
-        />
+          placeholder="Ім’я та прізвище:"
+        ></input>
         <button className="comment-button" onClick={onClick}>
           Відправити
         </button>
