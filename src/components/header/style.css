@@ -8,6 +8,7 @@
   padding: 10px;
   background: url(./header.png) center no-repeat;
   background-size: cover;
+  border-bottom: 2px solid var(--primary-color);
   z-index: 2;
 }
 
