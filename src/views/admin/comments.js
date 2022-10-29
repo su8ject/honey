@@ -20,7 +20,11 @@ export const Comments = () => {
         <span className="primary-text">Не має не перевірених коментарів</span>
       )}
       {comments.map((comment) => (
-        <CommentBox key={comment.objectId} comment={comment} />
+        <CommentBox
+          key={comment.objectId}
+          comment={comment}
+          fetchComments={fetchComments}
+        />
       ))}
     </div>
   );

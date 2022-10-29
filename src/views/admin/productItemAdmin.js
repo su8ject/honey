@@ -9,6 +9,10 @@ export const ProductItemAdmin = ({ product, fetchProducts }) => {
     setState((state) => ({ ...state, [field]: e.target.value }));
   };
 
+  const onCheckboxChange = (e) => {
+    setState((state) => ({ ...state, availability: e.target.checked }));
+  };
+
   const saveProduct = async (state) => {
     await API.saveProduct(state);
   };
@@ -53,6 +57,7 @@ export const ProductItemAdmin = ({ product, fetchProducts }) => {
         availability={state.availability}
         imageUrl={state.imageUrl}
         onChange={onChange}
+        onCheckboxChange={onCheckboxChange}
       />
       <div className="buttons">
         <button className="button" onClick={changeProduct}>

@@ -1,13 +1,15 @@
 import { API } from "../../api";
 
-export const CommentBox = ({ comment }) => {
+export const CommentBox = ({ comment, fetchComments }) => {
   const remove = async (id) => {
     await API.removeComment({ objectId: id });
+    fetchComments();
   };
 
   const toApprove = async (comment) => {
     comment.accepted = true;
     await API.saveComment(comment);
+    fetchComments();
   };
   return (
     <div className="comment-box">

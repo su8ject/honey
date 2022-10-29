@@ -1,27 +1,23 @@
 .page-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-title--header {
-
-}
-
-.page-title--header {
-    font-size: 50px;
-    margin-bottom: 10px;
-    color: var(--color-text);
+  font-size: 50px;
+  margin-bottom: 10px;
+  color: var(--color-text);
 }
 
 @media screen and (max-width: 768px) {
-    .page-title--header {
-        font-size: 40px;
-    }
+  .page-title--header {
+    font-size: 40px;
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .page-title--header {
-        font-size: 30px;
-    }
+  .page-title--header {
+    font-size: 30px;
+  }
 }

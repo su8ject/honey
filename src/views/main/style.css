@@ -73,26 +73,6 @@
   color: var(--color-text);
 }
 
-.comment-button {
-  transition: background-color 0.2s;
-  margin: 0 auto;
-  padding: 5px;
-  width: fit-content;
-  background-color: var(--primary-color);
-  border-radius: 5px;
-  border: 2px solid var(--primary-color);
-  font-size: var(--size-text);
-  color: var(--bg-secondary-color);
-  font-family: "Lora", serif;
-  cursor: pointer;
-}
-
-.comment-button:hover {
-  background: var(--bg-color);
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-}
-
 .slider {
   width: 500px;
   height: 450px;

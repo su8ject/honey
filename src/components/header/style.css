@@ -6,7 +6,7 @@
   gap: 10px 20px;
   width: 100%;
   padding: 10px;
-  background: url(./header.png) center no-repeat;
+  background: var(--bg-header);
   background-size: cover;
   border-bottom: 2px solid var(--primary-color);
   z-index: 2;

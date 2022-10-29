@@ -58,21 +58,28 @@
 }
 
 .popup--order {
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 5px;
+  transition: background-color 0.2s;
+  margin: 0 auto;
   padding: 5px;
+  width: fit-content;
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  border: 2px solid var(--primary-color);
   font-size: var(--size-text);
-  color: var(--color-text);
+  color: var(--bg-secondary-color);
+  font-family: "Lora", serif;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.popup--order:hover,
+.popup--order:hover {
+  background: var(--bg-color);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
 .popup--close:hover {
   opacity: 0.6;
-}
-
-.popup--order {
-  text-decoration: none;
 }
 
 .gallery {
@@ -94,6 +101,7 @@
   width: 265px;
   height: 400px;
   background: unset;
+  background-color: var(--bg-secondary-color);
   border-radius: 20px;
   border: 1px solid var(--primary-color);
   position: relative;
