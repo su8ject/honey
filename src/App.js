@@ -30,7 +30,7 @@ function App() {
   };
 
   return (
-    <div className={theme}>
+    <div className={theme + " main"}>
       <HashRouter>
         <Header
           isMenuActive={isMenuActive}

@@ -25,17 +25,19 @@ a {
   fill: white;
 }
 
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .bg {
-  min-height: calc(100vh - 190px);
   padding: 20px;
   padding-top: 0;
+  flex-grow: 1;
 
   @include themify($themes) {
     background: themed("bg-color");
-  }
-
-  @media screen and (max-width: 768px) {
-    min-height: calc(100vh - 50px);
   }
 }
 
