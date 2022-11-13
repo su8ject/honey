@@ -138,6 +138,15 @@ h3 {
   background: #171c20;
 }
 
+.none {
+  text-align: center;
+  height: 0;
+  color: var(--color-text);
+  font-size: var(--size-text);
+  transition: 0.2s;
+  border-radius: 5px;
+}
+
 .notification {
   position: fixed;
   top: 0;
@@ -554,7 +563,7 @@ h3 {
 }
 
 .slider {
-  width: 500px;
+  width: 1360px;
   height: 450px;
   margin-top: 50px;
   margin-left: auto;

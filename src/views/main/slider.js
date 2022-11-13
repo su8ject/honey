@@ -1,21 +1,25 @@
-import Carousel from "react-gallery-carousel";
-import "react-gallery-carousel/dist/index.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-export const Slider = () => {
-  const images = [1, 2, 3, 4, 5].map((number) => ({
-    src: `https://dreamycats.backendless.app/api/files/img/apiary-${number}.jpg`,
-  }));
+export const Slidertest = () => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows: false,
+    autoplay: true,
+  };
+  const images = [1, 2, 3, 4, 5];
   return (
-    <div className="slider">
-      <Carousel
-        className="slider"
-        images={images}
-        isMaximized={false}
-        hasSizeButton={false}
-        hasMediaButton={false}
-        hasIndexBoard={false}
-        hasThumbnails={false}
-      />
-    </div>
+    <Slider {...settings} className="slider">
+      {images.map((number) => (
+        <img
+          src={`https://dreamycats.backendless.app/api/files/img/apiary-${number}.jpg`}
+        />
+      ))}
+    </Slider>
   );
 };
