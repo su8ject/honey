@@ -1,5 +1,9 @@
+@import "../../style/themes.scss";
+
 .footer {
-  background: var(--footer-bg);
+  @include themify($themes) {
+    background: themed("footer-bg");
+  }
 }
 
 .footer--wrapper {
@@ -18,8 +22,8 @@
   width: 30px;
   object-fit: contain;
   fill: white;
-}
 
-.footer--social-icon:hover {
-  opacity: 0.6;
+  &:hover {
+    opacity: 0.6;
+  }
 }

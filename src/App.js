@@ -5,15 +5,15 @@ import { AppRouter } from "./components/appRouter";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { MobileMenu } from "./components/mobileMenu";
-import "./style/index.css";
+import "./style/style.css";
 
 function App() {
-  const [theme, setTheme] = useState("main-theme");
+  const [theme, setTheme] = useState("theme-light");
   const [isMenuActive, setIsMenuActive] = useState(false);
 
   const loadTheme = () => {
     if (localStorage.getItem("theme") === "additional") {
-      setTheme("additional-theme");
+      setTheme("theme-dark");
     }
   };
 

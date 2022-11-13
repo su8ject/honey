@@ -1,17 +1,17 @@
 export const ActivePanel = ({ setTheme }) => {
   const applayMainTheme = () => {
-    setTheme("main-theme");
+    setTheme("theme-light");
     localStorage.setItem("theme", "main");
   };
 
   const applayAdditionalTheme = () => {
-    setTheme("additional-theme");
+    setTheme("theme-dark");
     localStorage.setItem("theme", "additional");
   };
 
   return (
     <div className="active-panel">
-      <div className="notification"></div>
+      <div className="none"></div>
       <div className="theme-buttons">
         <button
           onClick={applayMainTheme}

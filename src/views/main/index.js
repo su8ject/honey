@@ -1,17 +1,15 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { API } from "../../api";
 import { PageTitle } from "../../components/pageTitle";
 import { advantages } from "../../static";
 import { Boxes } from "./boxes";
+import { CommentPopup } from "./commentPopup";
 import { Slider } from "./slider";
-
 import cn from "classnames";
 
-const commentDefaultState = { name: "", content: "" };
-
 export const Index = () => {
-  const [comment, setComment] = useState(commentDefaultState);
   const [comments, setComments] = useState([]);
+  const [isPopup, setIsPopup] = useState(false);
   const [active, setActive] = useState(false);
 
   const fetchComments = async () => {
@@ -23,36 +21,9 @@ export const Index = () => {
     fetchComments();
   }, []);
 
-  const validate = ({ name, content }) => {
-    return name && content;
+  const onClick = () => {
+    setIsPopup(true);
   };
-
-  const saveComment = useCallback(async (comment) => {
-    try {
-      await API.saveComment(comment);
-      setComment(newComment);
-    } catch (error) {
-      console.log(error.message);
-    }
-  }, []);
-
-  const onClick = useCallback(async () => {
-    const isValid = validate(comment);
-
-    if (isValid) {
-      await saveComment(comment);
-    }
-
-    setActive(true);
-
-    setTimeout(() => setActive(false), 2000);
-  }, [saveComment, comment]);
-
-  const onChange = (e, field) => {
-    setComment((comment) => ({ ...comment, [field]: e.target.value }));
-  };
-
-  const { name, content } = comment;
 
   return (
     <div className="bg">
@@ -67,36 +38,18 @@ export const Index = () => {
       />
       <h2 className="primary-header">Фото моєї пісіки</h2>
       <Slider />
-      {comments?.length ? (
-        <Boxes
-          type={"comments"}
-          array={comments}
-          header={"Відгуки моїх клієнтів"}
-        />
-      ) : (
-        <h2 className="primary-header">Коментарі відсутні</h2>
-      )}
-
-      <h2 className="primary-header">Додайте коментар</h2>
-      <div className="wrapper-input">
-        <Notification active={active} />
-        <textarea
-          placeholder="Коментар"
-          className="input"
-          rows="5"
-          onChange={(e) => onChange(e, "content")}
-          value={content}
-        ></textarea>
-        <input
-          className="input"
-          value={name}
-          onChange={(e) => onChange(e, "name")}
-          placeholder="Ім’я та прізвище:"
-        ></input>
+      <Boxes
+        type={"comments"}
+        array={comments}
+        header={"Відгуки моїх клієнтів"}
+      />
+      <Notification active={active} />
+      <div className="buttons comment-button">
         <button className="button" onClick={onClick}>
-          Відправити
+          Додати коментар
         </button>
       </div>
+      <CommentPopup isPopup={isPopup} setIsPopup={setIsPopup} />
     </div>
   );
 };
