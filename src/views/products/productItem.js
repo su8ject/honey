@@ -1,13 +1,13 @@
 import { useState } from "react";
 import sprite from "../../img/sprite.svg";
-import { Popup } from "./popup";
+import { PopupProduct } from "./popupProduct";
 
 export const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
   const isAvailable = card.availability;
   const [isFavourite, setIsFavourite] = useState(
     favouriteName.includes(card.name)
   );
-  const [isPopupActive, setIsPopupActive] = useState(false);
+  const [isPopup, setIsPopup] = useState(false);
 
   const handlerMark = () => {
     if (isFavourite) {
@@ -26,7 +26,7 @@ export const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
     if (e.target.tagName === "svg" || e.target.tagName === "use") {
       return;
     }
-    setIsPopupActive(true);
+    setIsPopup(true);
   };
 
   return (
@@ -48,9 +48,9 @@ export const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
           <span className="card-name--price">{card.price}грн</span>
         </div>
       </div>
-      <Popup
-        setIsPopupActive={setIsPopupActive}
-        isPopupActive={isPopupActive}
+      <PopupProduct
+        setIsPopup={setIsPopup}
+        isPopup={isPopup}
         name={card.name}
         img={card.imageUrl}
         description={card.description}
