@@ -5,7 +5,7 @@ import { AppRouter } from "./components/appRouter";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { MobileMenu } from "./components/mobileMenu";
-import "./style/style.css";
+import "./style/index.scss";
 
 function App() {
   const [theme, setTheme] = useState("theme-light");

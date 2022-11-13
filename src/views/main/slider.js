@@ -18,6 +18,7 @@ export const Slidertest = () => {
       {images.map((number) => (
         <img
           src={`https://dreamycats.backendless.app/api/files/img/apiary-${number}.jpg`}
+          key={number}
         />
       ))}
     </Slider>

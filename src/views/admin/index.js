@@ -6,7 +6,6 @@ import { EditingProducts } from "./editingProducts";
 export const Admin = () => {
   const [view, setView] = useState("");
   const [hasAccess, setHasAccess] = useState(null);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const login = async (password) => {
@@ -28,7 +27,6 @@ export const Admin = () => {
 
   return (
     <div className="bg">
-      {error && <span> {error} </span>}
       <div className="buttons">
         <button className="button" onClick={() => setView("products")}>
           Товари
