@@ -1,6 +1,7 @@
 import { useState } from "react";
 import sprite from "../../img/sprite.svg";
 import { PopupProduct } from "./popupProduct";
+import disableScroll from "disable-scroll";
 
 export const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
   const isAvailable = card.availability;
@@ -8,6 +9,8 @@ export const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
     favouriteName.includes(card.name)
   );
   const [isPopup, setIsPopup] = useState(false);
+
+  isPopup ? disableScroll.on() : disableScroll.off();
 
   const handlerMark = () => {
     if (isFavourite) {

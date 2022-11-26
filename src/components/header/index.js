@@ -4,13 +4,10 @@ import { Menu } from "./menu";
 import { Navigation } from "./navigation";
 import "./style.scss";
 
-import cn from "classnames";
-import styled from "styled-components";
-
 export const Header = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   return (
-    <div className={cn("header", { active: isMenuActive })}>
+    <div className="header">
       <Menu isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} />
       <Logo />
       <Navigation />

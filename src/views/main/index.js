@@ -6,10 +6,13 @@ import { Boxes } from "./boxes";
 import { CommentPopup } from "./commentPopup";
 import { Slidertest } from "./slider";
 import "./style.scss";
+import disableScroll from "disable-scroll";
 
 export const Index = () => {
   const [comments, setComments] = useState([]);
   const [isPopup, setIsPopup] = useState(false);
+
+  isPopup ? disableScroll.on() : disableScroll.off();
 
   const fetchComments = async () => {
     const response = await API.getComment(true);

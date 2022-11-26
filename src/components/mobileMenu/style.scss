@@ -1,10 +1,23 @@
 @import "../../style/variables.scss";
 @import "../../style/themes.scss";
 
-.mobile-menu {
+.mobile-menu-wrapper {
   display: none;
   position: fixed;
-  top: 70px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #33333399;
+
+  &.active {
+    display: block;
+  }
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 0;
   left: 0;
   width: 0;
   height: 100%;
@@ -12,7 +25,7 @@
   transition: 0.35s;
 
   @include themify($themes) {
-    background: themed("primary-color");
+    background: themed("bg-header");
   }
 
   @media screen and (max-width: 768px) {
@@ -20,8 +33,7 @@
   }
 
   &.active {
-    width: 100%;
-
+    width: 300px;
     .mobile-link {
       display: block;
     }
@@ -32,14 +44,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 5px;
   padding-top: 20px;
 }
 
 .mobile-link {
   display: none;
   text-decoration: none;
-  font-size: $size-header;
+  font-size: $size-sub-header-s;
   text-align: center;
 
   @include themify($themes) {
@@ -74,5 +86,16 @@
 
   @media screen and (max-width: 768px) {
     position: static;
+  }
+}
+
+.menu--img {
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
+
+  @include themify($themes) {
+    fill: themed("color-text");
+    stroke: themed("color-text");
   }
 }
