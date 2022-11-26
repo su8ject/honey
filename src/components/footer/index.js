@@ -1,5 +1,6 @@
 import { Logo } from "../header/logo";
 import { Svg } from "../svg";
+import "./style.scss";
 
 export const Footer = () => {
   return (

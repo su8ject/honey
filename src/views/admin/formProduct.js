@@ -33,7 +33,7 @@ export const FormProduct = ({
         onChange={(e) => onChange(e, "price")}
       />
       <Input
-        inputClasses={"input"}
+        inputClasses={"checkbox"}
         type="checkbox"
         label={"Наявність"}
         labelClasses={"label"}

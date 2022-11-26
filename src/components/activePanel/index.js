@@ -1,3 +1,5 @@
+import "./style.scss";
+
 export const ActivePanel = ({ setTheme }) => {
   const applayMainTheme = () => {
     setTheme("theme-light");

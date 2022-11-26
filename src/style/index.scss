@@ -1,15 +1,6 @@
 @import "./reset";
-@import "../components/header/style.scss";
 @import "./variables.scss";
 @import "./themes.scss";
-@import "../components/activePanel/style.scss";
-@import "../components/footer/style.scss";
-@import "../components/loader/style.scss";
-@import "../components/mobileMenu/style.scss";
-@import "../components/pageTitle/style.scss";
-@import "../views/admin/style.scss";
-@import "../views/main/styles.scss";
-@import "../views/products/style.scss";
 
 html {
   font-family: $font;

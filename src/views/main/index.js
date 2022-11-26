@@ -5,6 +5,7 @@ import { advantages } from "../../static";
 import { Boxes } from "./boxes";
 import { CommentPopup } from "./commentPopup";
 import { Slidertest } from "./slider";
+import "./style.scss";
 
 export const Index = () => {
   const [comments, setComments] = useState([]);

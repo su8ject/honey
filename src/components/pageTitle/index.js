@@ -1,3 +1,5 @@
+import "./style.scss";
+
 export const PageTitle = ({ header, text }) => {
   return (
     <div className="page-title">

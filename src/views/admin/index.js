@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { API } from "../../api";
 import { Comments } from "./comments";
 import { EditingProducts } from "./editingProducts";
+import "./style.scss";
 
 export const Admin = () => {
   const [view, setView] = useState("");

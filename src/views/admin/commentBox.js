@@ -11,6 +11,7 @@ export const CommentBox = ({ comment, fetchComments }) => {
     await API.saveComment(comment);
     fetchComments();
   };
+
   return (
     <div className="comment-box">
       <span className="primary-text">Ім’я: {comment.name}</span>

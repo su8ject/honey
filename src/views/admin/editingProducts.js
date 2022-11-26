@@ -78,7 +78,7 @@ export const EditingProducts = () => {
       />
       <span className="primary-text">Тип:</span>
       <Input
-        inputClasses={"input"}
+        inputClasses={"checkbox"}
         label={"Мед"}
         labelClasses={"label"}
         checked={state.type === "item" ? true : false}
@@ -88,7 +88,7 @@ export const EditingProducts = () => {
         onChange={(e) => onChange(e, "type")}
       />
       <Input
-        inputClasses={"input"}
+        inputClasses={"checkbox"}
         label={"Реманент"}
         labelClasses={"label"}
         checked={state.type === "tool" ? true : false}
