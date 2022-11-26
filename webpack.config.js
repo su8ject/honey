@@ -64,13 +64,6 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png)$/,
-        type: "asset/resource",
-        generator: {
-          filename: "img/[hash]",
-        },
-      },
-      {
         test: /\.(jpg)$/,
         use: "file-loader",
       },
