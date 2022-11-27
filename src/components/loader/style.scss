@@ -1,0 +1,27 @@
+@import "../../style/themes.scss";
+
+.loader {
+  position: absolute;
+  top: 50vh;
+  left: calc(50vw - 50px);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: loader 1.3s linear infinite;
+  border-width: 8ps;
+  border-style: solid;
+
+  @include themify($themes) {
+    border-color: themed("bg-color");
+    border-left-color: themed("primary-color");
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

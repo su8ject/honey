@@ -1,0 +1,87 @@
+@import "../../style/variables.scss";
+@import "../../style/themes.scss";
+
+.active-panel {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+
+  @include themify($themes) {
+    background: themed("bg-color");
+  }
+}
+
+.none {
+  text-align: center;
+  height: 0;
+  color: var(--color-text);
+  font-size: var(--size-text);
+  transition: 0.2s;
+  border-radius: 5px;
+}
+
+.notification {
+  position: fixed;
+  top: 0;
+  left: auto;
+  text-align: center;
+  height: 0;
+  font-size: $size-text;
+  transition: 0.2s;
+  border-radius: 5px;
+
+  @media screen and (max-width: 768px) {
+    font-size: $size-text-m;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: $size-text-s;
+  }
+
+  @include themify($themes) {
+    color: themed("color-text");
+  }
+
+  &.active {
+    height: 46px;
+
+    @include themify($themes) {
+      background: themed("bg-color");
+    }
+
+    @media screen and (max-width: 768px) {
+      height: 36px;
+    }
+  }
+}
+
+.theme-buttons {
+  padding-top: 20px;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+
+.main-theme-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: #c67100;
+
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+
+.additional-theme-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #22272b;
+
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}

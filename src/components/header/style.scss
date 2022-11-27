@@ -1,0 +1,106 @@
+@import "../../style/variables.scss";
+@import "../../style/themes.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  width: 100%;
+  padding: 10px;
+  z-index: 2;
+
+  &.active {
+    position: fixed;
+  }
+
+  @include themify($themes) {
+    border-bottom: 2px solid themed("primary-color");
+    background: themed("bg-header");
+    background-size: cover;
+  }
+}
+
+.header--logo {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  height: 50px;
+}
+
+.header--logo-text {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  color: white;
+  font-size: 30px;
+  border-left: 1px solid white;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.header--navigation {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
+.header--link {
+  color: white;
+  font-size: $size-text;
+
+  @media screen and (max-width: 768px) {
+    font-size: $size-header-m;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: $size-header-s;
+  }
+
+  &.active {
+    text-decoration: none;
+
+    @include themify($themes) {
+      color: themed("active-link-color");
+    }
+  }
+
+  &:hover {
+    @include themify($themes) {
+      color: themed("active-link-color");
+    }
+  }
+}
+
+.menu-line {
+  background: white;
+  height: 3px;
+  transform: none;
+  transition: 0.2s;
+}
+
+.menu {
+  &.active {
+    .menu-line {
+      &:nth-child(1) {
+        transform: translateY(11px) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-11px) rotate(-45deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import "../../style/themes.scss";
+
+.footer {
+  @include themify($themes) {
+    background: themed("footer-bg");
+  }
+}
+
+.footer--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  padding: 10px 0;
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.footer--social-icon {
+  height: 30px;
+  width: 30px;
+  object-fit: contain;
+  fill: white;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

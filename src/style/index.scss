@@ -1,0 +1,210 @@
+@import "./reset";
+@import "./variables.scss";
+@import "./themes.scss";
+
+html {
+  font-family: $font;
+}
+
+a {
+  transition: 0.4s;
+}
+
+.logo--img {
+  height: 50px;
+  width: 50px;
+  fill: white;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.bg {
+  padding: 20px;
+  padding-top: 0;
+  flex-grow: 1;
+
+  @include themify($themes) {
+    background: themed("bg-color");
+  }
+}
+
+.phone {
+  color: white;
+  font-size: $size-text;
+
+  @media screen and (max-width: 768px) {
+    font-size: $size-text-m;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: $size-text-s;
+  }
+
+  &:hover {
+    @include themify($themes) {
+      color: themed("active-link-color");
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.primary-header {
+  font-size: $size-header;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: $size-header-m;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: $size-header-s;
+  }
+
+  @include themify($themes) {
+    color: themed("color-text");
+  }
+}
+
+.primary-text {
+  max-width: 800px;
+  font-size: $size-text;
+  line-height: 25px;
+  text-align: justify;
+
+  @media screen and (max-width: 768px) {
+    font-size: $size-text-m;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: $size-text-s;
+  }
+
+  @include themify($themes) {
+    color: themed("color-text");
+  }
+}
+
+.label {
+  max-width: 800px;
+  font-size: $size-text;
+  line-height: 25px;
+  text-align: justify;
+
+  @media screen and (max-width: 768px) {
+    font-size: $size-text-m;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: $size-text-s;
+  }
+
+  @include themify($themes) {
+    color: themed("color-text");
+  }
+}
+
+.none-decoration {
+  text-decoration: none;
+}
+
+.input {
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: $size-text;
+  font-family: $font;
+  margin: 0 10px;
+  resize: vertical;
+
+  @media screen and (max-width: 768px) {
+    font-size: $size-text-m;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: $size-text-s;
+  }
+
+  @include themify($themes) {
+    background: themed("bg-secondary-color");
+    outline: 2px solid themed("primary-color");
+    color: themed("color-text");
+  }
+
+  &::placeholder {
+    @include themify($themes) {
+      color: themed("color-text");
+    }
+  }
+}
+
+.delivery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  transition: background-color 0.2s;
+  margin: 0 auto;
+  padding: 5px;
+  width: fit-content;
+  border-radius: 5px;
+  font-size: $size-text;
+  font-family: $font;
+  cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    font-size: $size-text-m;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: $size-text-s;
+  }
+
+  @include themify($themes) {
+    background-color: themed("primary-color");
+    border: 2px solid themed("primary-color");
+    color: themed("bg-secondary-color");
+  }
+
+  &:hover {
+    @include themify($themes) {
+      background-color: themed("bg-color");
+      border: 2px solid themed("primary-color");
+      color: themed("primary-color");
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+textarea {
+  &::placeholder {
+    @include themify($themes) {
+      color: themed("color-text");
+    }
+  }
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+}
