@@ -14,10 +14,10 @@ export const Index = () => {
 
   isPopup ? disableScroll.on() : disableScroll.off();
 
-  const fetchComments = async () => {
+  async function fetchComments() {
     const response = await API.getComment(true);
     setComments(response);
-  };
+  }
 
   useEffect(() => {
     fetchComments();

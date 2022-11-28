@@ -2,6 +2,7 @@ import { useState } from "react";
 import sprite from "../../img/sprite.svg";
 import { PopupProduct } from "./popupProduct";
 import disableScroll from "disable-scroll";
+import cn from "classnames";
 
 export const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
   const isAvailable = card.availability;
@@ -35,7 +36,7 @@ export const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
   return (
     <div>
       <div
-        className={"products-card" + `${isAvailable ? "" : " sold"}`}
+        className={cn("products-card", { sold: !isAvailable })}
         onClick={(e) => openPopup(e)}
       >
         <svg className="favourite-mark" onClick={handlerMark}>
