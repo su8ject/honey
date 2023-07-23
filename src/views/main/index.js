@@ -4,7 +4,7 @@ import { PageTitle } from "../../components/pageTitle";
 import { advantages } from "../../static";
 import { Boxes } from "./boxes";
 import { CommentPopup } from "./commentPopup";
-import { Slidertest } from "./slider";
+import { Sliderphoto } from "./slider";
 import "./style.scss";
 import disableScroll from "disable-scroll";
 
@@ -39,7 +39,7 @@ export const Index = () => {
         header={"Чому купувати мед саме у мене?"}
       />
       <h2 className="primary-header">Фото моєї пісіки</h2>
-      <Slidertest />
+      <Sliderphoto />
       <Boxes
         type={"comments"}
         array={comments}
