@@ -38,7 +38,7 @@ export const Index = () => {
         array={advantages}
         header={"Чому купувати мед саме у мене?"}
       />
-      <h2 className="primary-header">Фото моєї пісіки</h2>
+      <h2 className="primary-header">Фото моєї пасіки</h2>
       <Sliderphoto />
       <Boxes
         type={"comments"}
