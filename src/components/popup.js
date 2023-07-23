@@ -2,7 +2,7 @@ import cn from "classnames";
 
 export const Popup = ({ children, isPopup, name, setIsPopup }) => {
   const closePopup = (e) => {
-    if (e.target.className === "popup--body" || e.target.tagName === "BUTTON") {
+    if ((e.target.className === "popup--body" || e.target.className === "popup--cross")) {
       setIsPopup(false);
     }
   };

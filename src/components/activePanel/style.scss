@@ -44,6 +44,7 @@
 
   &.active {
     height: 46px;
+    z-index: 101;
 
     @include themify($themes) {
       background: themed("bg-color");
@@ -52,6 +53,10 @@
     @media screen and (max-width: 768px) {
       height: 36px;
     }
+  }
+
+  &.error {
+    color: $error-color;
   }
 }
 

@@ -2,12 +2,14 @@ import { useCallback, useState } from "react";
 import { API } from "../../api";
 import { Notification } from "../../components/notification";
 import { Popup } from "../../components/popup";
+import cn from "classnames";
 
 const commentDefaultState = { name: "", content: "" };
 
 export const CommentPopup = ({ isPopup, setIsPopup }) => {
   const [comment, setComment] = useState(commentDefaultState);
-  const [active, setActive] = useState(false);
+  const [isSuccessfully, setIsSuccessfully] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const validate = ({ name, content }) => {
     return name && content;
@@ -24,13 +26,15 @@ export const CommentPopup = ({ isPopup, setIsPopup }) => {
 
   const onClick = useCallback(async () => {
     const isValid = validate(comment);
-    setActive(true);
-
     if (isValid) {
+      setIsSuccessfully(true);
+      setIsPopup(false);
       await saveComment(comment);
+      setTimeout(() => setIsSuccessfully(false), 2000);
+    } else {
+      setIsError(true);
+      setTimeout(() => setIsError(false), 2000);
     }
-
-    setTimeout(() => setActive(false), 2000);
   }, [saveComment, comment]);
 
   const onChange = (e, field) => {
@@ -41,8 +45,12 @@ export const CommentPopup = ({ isPopup, setIsPopup }) => {
 
   return (
     <div>
-      <Notification active={active} />
+      <Notification
+        successfully={isSuccessfully}
+        error={isError}
+      />
       <Popup
+        isError={isError}
         isPopup={isPopup}
         setIsPopup={setIsPopup}
         name={"Додайте коментар"}
@@ -50,13 +58,13 @@ export const CommentPopup = ({ isPopup, setIsPopup }) => {
         <div className="wrapper-input">
           <textarea
             placeholder="Коментар"
-            className="input"
+            className={cn("input", {error: !content})}
             rows="5"
             onChange={(e) => onChange(e, "content")}
             value={content}
           ></textarea>
           <input
-            className="input"
+            className={cn("input", {error: !name})}
             value={name}
             onChange={(e) => onChange(e, "name")}
             placeholder="Ім’я та прізвище:"

@@ -143,6 +143,10 @@ a {
     color: themed("color-text");
   }
 
+  &.error {
+    outline: 2px solid $error-color;
+  }
+
   &::placeholder {
     @include themify($themes) {
       color: themed("color-text");
