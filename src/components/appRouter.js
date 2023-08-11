@@ -1,4 +1,4 @@
-import { Navigate, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Admin } from "../views/admin";
 import { Delivery } from "../views/delivery";
 import { Index } from "../views/main";

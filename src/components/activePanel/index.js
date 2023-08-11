@@ -1,12 +1,12 @@
 import "./style.scss";
 
 export const ActivePanel = ({ setTheme }) => {
-  const applayMainTheme = () => {
+  const applyMainTheme = () => {
     setTheme("theme-light");
     localStorage.setItem("theme", "main");
   };
 
-  const applayAdditionalTheme = () => {
+  const applyAdditionalTheme = () => {
     setTheme("theme-dark");
     localStorage.setItem("theme", "additional");
   };
@@ -16,12 +16,12 @@ export const ActivePanel = ({ setTheme }) => {
       <div className="none"></div>
       <div className="theme-buttons">
         <button
-          onClick={applayMainTheme}
+          onClick={applyMainTheme}
           type="button"
           className="main-theme-button"
         ></button>
         <button
-          onClick={applayAdditionalTheme}
+          onClick={applyAdditionalTheme}
           type="button"
           className="additional-theme-button"
         ></button>

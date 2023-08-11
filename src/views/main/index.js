@@ -4,7 +4,7 @@ import { PageTitle } from "../../components/pageTitle";
 import { advantages } from "../../static";
 import { Boxes } from "./boxes";
 import { CommentPopup } from "./commentPopup";
-import { Slidertest } from "./slider";
+import { Sliderphoto } from "./slider";
 import "./style.scss";
 import disableScroll from "disable-scroll";
 
@@ -14,10 +14,10 @@ export const Index = () => {
 
   isPopup ? disableScroll.on() : disableScroll.off();
 
-  const fetchComments = async () => {
+  async function fetchComments() {
     const response = await API.getComment(true);
     setComments(response);
-  };
+  }
 
   useEffect(() => {
     fetchComments();
@@ -38,8 +38,8 @@ export const Index = () => {
         array={advantages}
         header={"Чому купувати мед саме у мене?"}
       />
-      <h2 className="primary-header">Фото моєї пісіки</h2>
-      <Slidertest />
+      <h2 className="primary-header">Фото моєї пасіки</h2>
+      <Sliderphoto />
       <Boxes
         type={"comments"}
         array={comments}

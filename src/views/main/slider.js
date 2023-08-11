@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export const Slidertest = () => {
+export const Sliderphoto = () => {
   const settings = {
     dots: false,
     infinite: true,
