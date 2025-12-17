@@ -45,6 +45,23 @@ const API = {
   },
 
   removeComment: (id) => Backendless.Data.of(Tables.COMMENTS).remove(id),
+  
+  test: () => {
+    fetch("http://localhost:5000/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: "Мед",
+        price: 250,
+        description: "Смачний мед",
+      }),
+    })
+    .then((res) => res.json())
+    .then((data) => console.log("Відповідь: ",data))
+    .catch((err) => console.error("Помилка: ", err));
+  }
 };
 
 export { API };

@@ -15,7 +15,6 @@ export const Products = ({ type }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   async function fetchProducts() {
-    console.log(type);
     try {
       setIsLoading(true);
       const response = await API.getProduct(type);
@@ -26,6 +25,11 @@ export const Products = ({ type }) => {
     setIsLoading(false);
   };
 
+async function test() {
+  await API.test();
+  console.log(1);
+  }
+
   useEffect(() => {
     fetchProducts();
   }, [type]);
@@ -35,6 +39,7 @@ export const Products = ({ type }) => {
 
   return (
     <div className="bg">
+      <button onClick={test}>TEST</button>
       <PageTitle header={header} />
       {isLoading ? <Loader /> : <ProductList cards={products} />}
     </div>
