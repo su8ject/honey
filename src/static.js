@@ -1,4 +1,4 @@
-export const advantages = [
+const advantages = [
   {
     header: "Великий досвід",
     text: "Займаюсь бджолярством дев'ять років.",
@@ -16,7 +16,7 @@ export const advantages = [
   },
 ];
 
-export const delivery = [
+const delivery = [
   {
     svgHash: "bike",
     text: "Доставка по м. Житомир безкоштовна",
@@ -27,7 +27,7 @@ export const delivery = [
   },
 ];
 
-export const paymentMethod = [
+const paymentMethod = [
   {
     svgHash: "money",
     text: "Готівкою",
@@ -37,3 +37,8 @@ export const paymentMethod = [
     text: "Банківською картою",
   },
 ];
+export {
+  paymentMethod,
+  delivery,
+  advantages,
+};
