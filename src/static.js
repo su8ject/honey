@@ -37,8 +37,35 @@ const paymentMethod = [
     text: "Банківською картою",
   },
 ];
+
+const PRODUCTS = {
+  tool: [
+    {
+    objectId: 1,
+    type: "tool",
+    availability: true,
+    name: "Вулик",
+    price: 100,
+    imageUrl: "www",
+    description: "123",
+  },
+],
+  item: [
+    {
+    objectId: 1,
+    type: "item",
+    availability: true,
+    name: "Мед",
+    price: 200,
+    imageUrl: "www",
+    description: "123",
+  },
+  ],
+};
+
 export {
   paymentMethod,
   delivery,
   advantages,
+  PRODUCTS,
 };

@@ -4,6 +4,7 @@ import { Loader } from "../../components/loader";
 import { PageTitle } from "../../components/pageTitle";
 import { ProductList } from "./productList";
 import "./style.scss";
+import { PRODUCTS } from "../../static";
 
 const ProductTypes = {
   item: "item",
@@ -14,11 +15,16 @@ export const Products = ({ type }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   async function fetchProducts() {
-    setIsLoading(true);
-    const response = await API.getProduct(type);
-    setProducts(response);
+    console.log(type);
+    try {
+      setIsLoading(true);
+      const response = await API.getProduct(type);
+      setProducts(response);
+    } catch(e) {
+      setProducts(PRODUCTS[type]);
+    };
     setIsLoading(false);
-  }
+  };
 
   useEffect(() => {
     fetchProducts();
