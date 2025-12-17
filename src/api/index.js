@@ -10,7 +10,7 @@ const API = {
   getProduct: (type) => {
     if (type) {
       const query = Backendless.DataQueryBuilder.create()
-        .setWhereClause(`type = '${type}'`)
+        .setWhereClause(`type = "${type}"`)
         .setSortBy(["availability DESC", "name"])
         .setPageSize(100);
 
