@@ -54,8 +54,10 @@ const API = {
       },
       body: JSON.stringify({
         name: "Мед",
-        price: 250,
         description: "Смачний мед",
+        price: 250,
+        imageUrl: "Смачний мед",
+        availability: true,
       }),
     })
     .then((res) => res.json())
