@@ -53,6 +53,7 @@ const API = {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        type: "item",
         name: "Мед",
         description: "Смачний мед",
         price: 250,
