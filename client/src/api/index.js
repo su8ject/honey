@@ -47,7 +47,7 @@ const API = {
   removeComment: (id) => Backendless.Data.of(Tables.COMMENTS).remove(id),
   
   test: () => {
-    fetch("http://localhost:5000/", {
+    fetch("http://localhost:5000/api/products", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

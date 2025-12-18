@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import Product from "./product.js";
+import router from "./router.js";
 
 const PORT = 5000;
 const DB_URL = "mongodb+srv://krivizyukandrei_db_user:uKmN1XVjDTwqaFv1@cluster0.932gsdh.mongodb.net/?appName=Cluster0";
@@ -11,16 +11,8 @@ const app = express();
 app.use(cors({ origin: "http://localhost:3000" }));
 
 app.use(express.json());
- 
-/* app.get("/", (req, res) => {
-  res.status(200).send("Server is running");
-}); */
 
-app.post("/", async (req, res) => { 
-  const {type, name, description, price, imageUrl, availability} = req.body;
-  const product = await Product.create({type, name, description, price, imageUrl, availability});
-  res.status(200).json(product);
-});
+app.use("/api", router);
 
 async function startApp() {
   try {
