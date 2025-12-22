@@ -19,17 +19,12 @@ class ProductService {
         return product;
     };
 
-    async update(req, res) {
-        try {
-            const product = req.body;
-            if (!product._id) {
-                return res.status(400).json({message: "ID не вказано"});
-            }
-            const updatedProduct = await Product.findByIdAndUpdate(product._id, product, {new: true});
-            return res.json(updatedProduct);
-        } catch (e) {
-            res.status(500).json(e);
-        };
+    async update(product) {
+        if (!product._id) {
+            throw new Error("ID не вказано");
+        }
+        const updatedProduct = await Product.findByIdAndUpdate(product._id, product, {new: true});
+        return updatedProduct;
     };
 
     async delete(req, res) {

@@ -32,11 +32,7 @@ class PostController {
 
     async update(req, res) {
         try {
-            const product = req.body;
-            if (!product._id) {
-                return res.status(400).json({message: "ID не вказано"});
-            }
-            const updatedProduct = await Product.findByIdAndUpdate(product._id, product, {new: true});
+            const updatedProduct = await ProductService.update(req.body);
             return res.json(updatedProduct);
         } catch (e) {
             res.status(500).json(e);
