@@ -6,14 +6,9 @@ class ProductService {
         return createdProduct;
     };
 
-    async getAll(req, res) {
-        try {
-            const products = await Product.find();
-            return res.json(products);
-        } catch (e) {
-            res.status(500).json(e);
-        };
-
+    async getAll() {
+        const products = await Product.find();
+        return products;
     };
 
     async getOne(id) {

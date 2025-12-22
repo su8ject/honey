@@ -13,7 +13,7 @@ class PostController {
 
     async getAll(req, res) {
         try {
-            const products = await Product.find();
+            const products = await ProductService.getAll();
             return res.json(products);
         } catch (e) {
             res.status(500).json(e);
