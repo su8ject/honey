@@ -1,8 +1,8 @@
 import Product from "./Product.js";
 
 class ProductService {
-    async create(post) {
-        const createdProduct = await Product.create(post);
+    async create(postproduct) {
+        const createdProduct = await Product.create(postproduct);
         return createdProduct;
     };
 
@@ -16,17 +16,12 @@ class ProductService {
 
     };
 
-    async getOne(req, res) {
-        try {
-            const {id} = req.params;
-            if (!id) {
-                return res.status(400).json({message: "ID не вказано"});
-            }
-            const product = await Product.findById(id);
-            return res.json(product);
-        } catch (e) {
-            res.status(500).json(e);
-        };
+    async getOne(id) {
+        if (!id) {
+          throw new Error("ID не вказано");
+        }
+        const product = await Product.findById(id);
+        return product;
     };
 
     async update(req, res) {
