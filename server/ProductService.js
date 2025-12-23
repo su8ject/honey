@@ -11,6 +11,11 @@ class ProductService {
         return products;
     };
 
+    async getItems() {
+        const items = await Product.find({type: "item"});
+        return items;
+    };
+
     async getOne(id) {
         if (!id) {
           throw new Error("ID не вказано");

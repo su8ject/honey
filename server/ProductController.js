@@ -18,7 +18,15 @@ class PostController {
         } catch (e) {
             res.status(500).json(e);
         };
+    };
 
+    async getItems(req, res) {
+        try {
+            const items = await ProductService.getItems();
+            return res.json(items);
+        } catch (e) {
+            res.status(500).json(e);
+        };
     };
 
     async getOne(req, res) {
