@@ -38,6 +38,15 @@ class PostController {
         };
     };
 
+    async getType(req, res) {
+        try {
+            const productType = await ProductService.getType(req.params.type);
+            return res.json(productType);
+        } catch (e) {
+            res.status(500).json(e);
+        };
+    };
+
     async getOne(req, res) {
         try {
             const product = await ProductService.getOne(req.params.id);

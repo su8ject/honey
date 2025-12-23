@@ -21,6 +21,14 @@ class ProductService {
         return tools;
     };
 
+    async getType(type) {
+        if (!type) {
+          throw new Error("Тип не вказано");
+        }
+        const productType = await Product.find({ type: type });
+        return productType;
+    };
+
     async getOne(id) {
         if (!id) {
           throw new Error("ID не вказано");

@@ -11,5 +11,6 @@ router.put("/products/:id", ProductController.update);
 router.delete("/products/:id", ProductController.delete);
 router.get("/items", ProductController.getItems);
 router.get("/tools", ProductController.getTools);
+router.get("/type/:type", ProductController.getType);
 
 export default router;
