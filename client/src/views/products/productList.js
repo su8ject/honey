@@ -15,7 +15,7 @@ export const ProductList = ({ cards }) => {
       {cards.map((card) => (
         <ProductItem
           card={card}
-          key={card.objectId}
+          key={card._id}
           favouriteName={favouriteName}
           setFavouriteName={setFavouriteName}
         />

@@ -1,4 +1,3 @@
-import Product from "./Product.js";
 import ProductService from "./ProductService.js";
 
 class PostController {
