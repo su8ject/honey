@@ -12,7 +12,7 @@ class ProductService {
     };
 
     async getItems() {
-        const items = await Product.find({type: "item"});
+        const items = await Product.find({ type: "item" });
         return items;
     };
 
