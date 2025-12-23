@@ -29,6 +29,15 @@ class PostController {
         };
     };
 
+    async getTools(req, res) {
+        try {
+            const tools = await ProductService.getTools();
+            return res.json(tools);
+        } catch (e) {
+            res.status(500).json(e);
+        };
+    };
+
     async getOne(req, res) {
         try {
             const product = await ProductService.getOne(req.params.id);

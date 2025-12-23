@@ -16,6 +16,11 @@ class ProductService {
         return items;
     };
 
+    async getTools() {
+        const tools = await Product.find({ type: "tool" });
+        return tools;
+    };
+
     async getOne(id) {
         if (!id) {
           throw new Error("ID не вказано");
