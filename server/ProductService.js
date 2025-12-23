@@ -1,8 +1,10 @@
 import Product from "./Product.js";
+import fileService from "./fileService.js";
 
 class ProductService {
-    async create(postproduct) {
-        const createdProduct = await Product.create(postproduct);
+    async create(postproduct, imageUrl) {
+        const fileName = await fileService.saveFile(imageUrl);
+        const createdProduct = await Product.create({...postproduct, imageUrl: fileName});
         return createdProduct;
     };
 
