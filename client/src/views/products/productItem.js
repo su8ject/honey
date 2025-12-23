@@ -3,6 +3,7 @@ import sprite from "../../img/sprite.svg";
 import { PopupProduct } from "./popupProduct";
 import disableScroll from "disable-scroll";
 import cn from "classnames";
+import { host } from "../../constants.js";
 
 export const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
   const isAvailable = card.availability;
@@ -45,7 +46,7 @@ export const ProductItem = ({ card, favouriteName, setFavouriteName }) => {
           ></use>
         </svg>
         <div>
-          <img src={card.imageUrl} className="card--img" />
+          <img src={host + card.imageUrl} className="card--img" />
         </div>
         <div className="card-name">
           <span className="card-name--text">{card.name}</span>

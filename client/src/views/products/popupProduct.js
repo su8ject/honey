@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Popup } from "../../components/popup";
+import { host } from "../../constants.js";
 
 export const PopupProduct = ({
   isPopup,
@@ -11,7 +12,7 @@ export const PopupProduct = ({
   return (
     <Popup isPopup={isPopup} setIsPopup={setIsPopup} name={name}>
       <div className="popup--img">
-        <img src={img} className="card--img" />
+        <img src={host + img} className="card--img" />
       </div>
       <div className="popup--description">{description}</div>
       <div className="popup--buttons">
