@@ -1,5 +1,6 @@
 import Router from "express";
 import ProductController from "./ProductController.js";
+import ApiaryController from "./ApiaryController.js";
 
 const router = new Router();
 
@@ -12,5 +13,6 @@ router.delete("/products/:id", ProductController.delete);
 router.get("/items", ProductController.getItems);
 router.get("/tools", ProductController.getTools);
 router.get("/type/:type", ProductController.getType);
+router.get("/apiarys", ApiaryController.getAll);
 
 export default router;
