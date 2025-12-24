@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import {host} from "../../constants.js"
 
 export const Sliderphoto = () => {
   const settings = {
@@ -12,12 +13,14 @@ export const Sliderphoto = () => {
     arrows: false,
     autoplay: true,
   };
+
   const images = [1, 2, 3, 4, 5];
+
   return (
     <Slider {...settings} className="slider">
       {images.map((number) => (
         <img
-          src={`https://dreamycats.backendless.app/api/files/img/apiary-${number}.jpg`}
+          src={host + "apiary" + number + ".jpg"}
           key={number}
         />
       ))}
