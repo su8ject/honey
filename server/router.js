@@ -14,5 +14,6 @@ router.get("/items", ProductController.getItems);
 router.get("/tools", ProductController.getTools);
 router.get("/type/:type", ProductController.getType);
 router.get("/apiarys", ApiaryController.getAll);
+router.get("text")
 
 export default router;
