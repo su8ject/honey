@@ -1,6 +1,7 @@
 import Router from "express";
 import ProductController from "./ProductController.js";
 import ApiaryController from "./ApiaryController.js";
+import TextController from "./TextController.js";
 
 const router = new Router();
 
@@ -14,6 +15,7 @@ router.get("/items", ProductController.getItems);
 router.get("/tools", ProductController.getTools);
 router.get("/type/:type", ProductController.getType);
 router.get("/apiarys", ApiaryController.getAll);
-router.get("text")
+router.get("/comments", TextController.getComments);
+router.get("/advantages", TextController.getAdvantages);
 
 export default router;
