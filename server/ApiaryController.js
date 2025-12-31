@@ -4,7 +4,7 @@ class ApiaryController {
     async getAll (req, res) {
         try {
             const apiarys = await ApiaryService.getAll();
-            return apiarys;
+            res.json(apiarys);
         } catch (e) {
             res.status(500).json(e);
         };

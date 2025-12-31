@@ -28,7 +28,12 @@ const API = {
     };
   },
 
-  removeProduct: (id) => Backendless.Data.of(Tables.GOODS).remove(id),
+  getComments: async () => {
+    return fetch("http://localhost:5000/api/comments/")
+    .then((res) => res.json())
+  },
+
+  // removeProduct: (id) => Backendless.Data.of(Tables.GOODS).remove(id),
 
   /* saveComment: (comment) => Backendless.Data.of(Tables.COMMENTS).save(comment), */
 

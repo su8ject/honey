@@ -15,9 +15,9 @@ export const Index = () => {
   isPopup ? disableScroll.on() : disableScroll.off();
 
   async function fetchComments() {
-    const response = await API.getComment(true);
+    const response = await API.getComments();
     setComments(response);
-  }
+  };
 
   useEffect(() => {
     fetchComments();
