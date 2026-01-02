@@ -1,16 +1,18 @@
 # dependencies
-/node_modules
+client/node_modules
+server/node_modules
 /.pnp
 /.idea
 package-lock.json
 .pnp.js
+package-lock.json
 
 # testing
 /coverage
 
 # production
-/build
-/dist
+client/build
+client/dist
 
 # misc
 .DS_Store
