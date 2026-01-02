@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Logo } from "./logo";
 import AppBar from "@mui/material/AppBar";
 import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,6 +11,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { NavLink } from "react-router-dom";
+import { StyledSvg } from "../UI/SyledSvg";
 
 export const Header = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -30,7 +30,7 @@ export const Header = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Logo hash="logo" sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <StyledSvg hash="logo" sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -84,7 +84,7 @@ export const Header = () => {
               ))}
             </Menu>
           </Box>
-          <Logo hash="logo" sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <StyledSvg hash="logo" sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
