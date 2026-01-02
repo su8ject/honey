@@ -5,21 +5,12 @@ import { AppRouter } from "./components/appRouter";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { MobileMenu } from "./components/mobileMenu";
+import {theme} from "./theme";
+import { ThemeProvider } from "@mui/material/styles";
 import "./style/index.scss";
 
 function App() {
-  const [theme, setTheme] = useState("theme-light");
   const [isMenuActive, setIsMenuActive] = useState(false);
-
-  const loadTheme = () => {
-    if (localStorage.getItem("theme") === "additional") {
-      setTheme("theme-dark");
-    }
-  };
-
-  useEffect(() => {
-    loadTheme();
-  }, []);
 
   const menuHandler = () => {
     if (isMenuActive) {
@@ -30,7 +21,7 @@ function App() {
   };
 
   return (
-    <div className={theme + " main"}>
+    <ThemeProvider theme={theme}>
       <HashRouter>
         <Header
           isMenuActive={isMenuActive}
@@ -38,11 +29,11 @@ function App() {
           menuHandler={menuHandler}
         />
         <MobileMenu isMenuActive={isMenuActive} menuHandler={menuHandler} />
-        <ActivePanel setTheme={setTheme} />
+        <ActivePanel />
         <AppRouter isMenuActive={isMenuActive} />
         <Footer />
       </HashRouter>
-    </div>
+    </ThemeProvider>
   );
 }
 
