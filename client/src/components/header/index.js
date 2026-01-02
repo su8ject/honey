@@ -41,12 +41,11 @@ export const Header = () => {
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
+              letterSpacing: ".2rem",
               textDecoration: "none",
             }}
           >
-            LOGO
+            MykolaHony
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -55,7 +54,6 @@ export const Header = () => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
             >
               <MenuIcon />
             </IconButton>
@@ -86,6 +84,7 @@ export const Header = () => {
           </Box>
           <StyledSvg hash="logo" sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
+            color="primary.contrastText"
             variant="h5"
             noWrap
             component={NavLink}
@@ -96,12 +95,11 @@ export const Header = () => {
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
+              letterSpacing: ".2rem",
               textDecoration: "none",
             }}
           >
-            LOGO
+            MykolaHony
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
@@ -111,14 +109,14 @@ export const Header = () => {
                 to={page.link}
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, display: "block" }}
+                sx={{ my: 2, display: "block", fontSize: "16px" }}
               >
                 {page.name}
               </Button>
             ))}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
-            <IconButton size="large" aria-label="show cart items" color="inherit">
+            <IconButton size="large" aria-label="show cart items">
               <ShoppingCartOutlinedIcon />
             </IconButton>
           </Box>
