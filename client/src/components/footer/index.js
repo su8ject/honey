@@ -1,12 +1,12 @@
-import { Logo } from "../header/logo";
 import { Svg } from "../svg";
 import "./style.scss";
+import { StyledSvg } from "../UI/SyledSvg";
 
 export const Footer = () => {
   return (
     <div className="footer">
       <div className="footer--wrapper">
-        <Logo />
+        <StyledSvg hash="logo" sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
         <a href={"tel:+380989656054"} className="phone none-decoration">
           +380989656054
         </a>
