@@ -1,10 +1,10 @@
-import { Svg } from "../svg";
+import sprite from "../../img/sprite.svg";
 import SvgIcon from "@mui/material/SvgIcon";
 
-export const Logo = (props) => {
+export const Logo = ({hash, ...props}) => {
   return (
     <SvgIcon {...props}>
-      <Svg  hash={"logo"} className="logo--img" />
+      <use href={sprite + `#${hash}`}></use>
     </SvgIcon>
   );
 };
