@@ -3,14 +3,15 @@ import { ActivePanel } from "./components/activePanel";
 import { AppRouter } from "./components/appRouter";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
-import {theme} from "./theme";
+import { theme } from "./theme";
 import { ThemeProvider } from "@mui/material/styles";
-import "./style/index.scss";
+import { inputGlobalStyles } from "./inputGlobalStyles";
 
 function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      {inputGlobalStyles}
       <HashRouter>
         <Header />
         <ActivePanel />
