@@ -1,4 +1,3 @@
-import { MobileMenu } from "../mobileMenu";
 import disableScroll from "disable-scroll";
 
 export const Menu = ({ isMenuActive, setIsMenuActive }) => {
@@ -19,7 +18,6 @@ export const Menu = ({ isMenuActive, setIsMenuActive }) => {
         <span className="menu-line"></span>
         <span className="menu-line"></span>
       </div>
-      <MobileMenu isMenuActive={isMenuActive} menuHandler={menuHandler} />
     </div>
   );
 };

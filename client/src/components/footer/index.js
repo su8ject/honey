@@ -1,6 +1,6 @@
 import { Svg } from "../svg";
 import "./style.scss";
-import { StyledSvg } from "../UI/SyledSvg";
+import { StyledSvg } from "../UI/syledSvg";
 
 export const Footer = () => {
   return (

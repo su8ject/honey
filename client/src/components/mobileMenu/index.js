@@ -1,58 +1,41 @@
-import { NavLink } from "react-router-dom";
-import "./style.scss";
-import cn from "classnames";
-import { Svg } from "../svg";
+import { pages } from "../header/pages";
+import { MenuNavigation } from "../header/menuNavigation";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import Menu from "@mui/material/Menu";
 
-export const MobileMenu = ({ isMenuActive, menuHandler }) => {
-  const handler = (e) => {
-    e.target.tagName === "DIV" && menuHandler();
-  };
+export const MobileMenu = ({ handleOpenNavMenu, handleCloseNavMenu, anchorElNav }) => {
 
   return (
-    <div
-      className={cn("mobile-menu-wrapper", { active: isMenuActive })}
-      onClick={(e) => handler(e)}
-    >
-      <aside className={cn("mobile-menu", { active: isMenuActive })}>
-        <ul className="mobile-navigation">
-          <li className="flex-center">
-            <Svg hash={"house"} className="menu--img" />
-            <NavLink to="index" className="mobile-link" onClick={menuHandler}>
-              Головна
-            </NavLink>
-          </li>
-          <li className="flex-center">
-            <Svg hash={"honey"} className="menu--img" />
-            <NavLink
-              to="products-honey"
-              className="mobile-link"
-              onClick={menuHandler}
-            >
-              Продукти пасічництва
-            </NavLink>
-          </li>
-          <li className="flex-center">
-            <Svg hash={"hive"} className="menu--img" />
-            <NavLink
-              to="products-remanent"
-              className="mobile-link"
-              onClick={menuHandler}
-            >
-              Реманент пасівництва
-            </NavLink>
-          </li>
-          <li className="flex-center">
-            <Svg hash={"delivery"} className="menu--img" />
-            <NavLink
-              to="delivery"
-              className="mobile-link"
-              onClick={menuHandler}
-            >
-              Доставка
-            </NavLink>
-          </li>
-        </ul>
-      </aside>
-    </div>
+    <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+      <IconButton
+        size="large"
+        aria-label="account of current user"
+        aria-controls="menu-appbar"
+        aria-haspopup="true"
+        onClick={handleOpenNavMenu}
+      >
+        <MenuIcon />
+      </IconButton>
+      <Menu
+        id="menu-appbar"
+        anchorEl={anchorElNav}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "left",
+        }}
+        keepMounted
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "left",
+        }}
+        open={Boolean(anchorElNav)}
+        onClose={handleCloseNavMenu}
+        sx={{ display: { xs: "block", md: "none" } }}
+      >
+        <MenuNavigation pages={pages} onClick={handleCloseNavMenu} />
+      </Menu>
+    </Box>
   );
 };

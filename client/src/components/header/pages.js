@@ -1,0 +1,1 @@
+export const pages = [{ name: "Головна", link: "/" }, { name: "Продукти пасічництва", link: "products-honey" }, { name: "Реманент пасівництва", link: "products-remanent" }, { name: "Доставка", link: "delivery" }];
