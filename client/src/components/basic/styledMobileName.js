@@ -1,4 +1,4 @@
-import { StyledSvg } from "../UI/syledSvg";
+import { StyledSvg } from "../UI/styledSvg";
 import { NavLink } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 

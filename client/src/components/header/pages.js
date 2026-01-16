@@ -1,1 +1,1 @@
-export const pages = [{ name: "Головна", link: "/" }, { name: "Продукти пасічництва", link: "products-honey" }, { name: "Реманент пасівництва", link: "products-remanent" }, { name: "Доставка", link: "delivery" }];
+export const pages = [{ name: "Головна", link: "/", icon: "house" }, { name: "Продукти пасічництва", link: "products-honey", icon: "honey" }, { name: "Реманент пасівництва", link: "products-remanent", icon: "hive" }, { name: "Доставка", link: "delivery", icon: "delivery" }];

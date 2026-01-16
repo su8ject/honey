@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
+import { StyledSvg } from "../UI/styledSvg";
 import MenuItem from "@mui/material/MenuItem";
-import Typography from "@mui/material/Typography";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItem from "@mui/material/ListItem";
 
 export const MenuNavigation = ({ pages, onClick }) => {
 
@@ -13,9 +15,12 @@ export const MenuNavigation = ({ pages, onClick }) => {
           key={page}
           onClick={onClick}
         >
-          <Typography sx={{ textAlign: "center" }}>
+          <ListItemIcon>
+            <StyledSvg hash={page.icon} />
+          </ListItemIcon>
+          <ListItem>
             {page.name}
-          </Typography>
+          </ListItem>
         </MenuItem>
       ))}
     </>
