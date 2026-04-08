@@ -18,7 +18,7 @@ export const MenuNavigation = ({ pages, onClick }) => {
           <ListItemIcon>
             <StyledSvg hash={page.icon} />
           </ListItemIcon>
-          <ListItem>
+          <ListItem sx={{ color: "primary.contrastText" }}>
             {page.name}
           </ListItem>
         </MenuItem>
