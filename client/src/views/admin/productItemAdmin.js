@@ -21,8 +21,6 @@ export const ProductItemAdmin = ({ product, fetchProducts }) => {
     try {
       new URL(state.imageUrl);
     } catch {
-      setError("Invalid URL");
-
       return false;
     }
 
