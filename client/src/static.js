@@ -63,9 +63,15 @@ const PRODUCTS = {
   ],
 };
 
+const mainTitle = {
+  header: "Про мене",
+  text: "Доброго дня, вітаю на моєму сайті. Мене звати Микола.",
+};
+
 export {
   paymentMethod,
   delivery,
   advantages,
   PRODUCTS,
+  mainTitle,
 };

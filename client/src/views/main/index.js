@@ -5,8 +5,8 @@ import { advantages } from "../../static";
 import { Boxes } from "./boxes";
 import { CommentPopup } from "./commentPopup";
 import { Sliderphoto } from "./slider";
-import "./style.scss";
 import disableScroll from "disable-scroll";
+import { mainTitle } from "../../static";
 
 export const Index = () => {
   const [comments, setComments] = useState([]);
@@ -30,8 +30,8 @@ export const Index = () => {
   return (
     <div className="bg">
       <PageTitle
-        header={"Про мене"}
-        text={"Доброго дня, вітаю на моєму сайті. Мене звати Микола."}
+        header={mainTitle.header}
+        text={mainTitle.text}
       />
       <Boxes
         type={"advantages"}
