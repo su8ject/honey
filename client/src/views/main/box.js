@@ -1,15 +1,17 @@
+import ListItem from "@mui/material/ListItem";
 import { Svg } from "../../components/svg";
+import { boxType } from "../../static";
 
-export const Box = ({ type, item }) => {
-  if (type === "advantages") {
+export const StyledBox = ({ type, item }) => {
+  if (type === boxType.advantages) {
     return (
-      <div className="advantages--container">
+      <ListItem>
         <div className="advantages--box">
           <Svg hash={item.svgHash} className="box--img" />
           <h3 className="box--header">{item.header}</h3>
         </div>
         <p className="primary-text">{item.text}</p>
-      </div>
+      </ListItem>
     );
   } else {
     return (

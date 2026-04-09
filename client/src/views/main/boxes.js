@@ -1,13 +1,13 @@
-import { ContainerWrapper } from "./containerWrapper";
-import { Box } from "./box";
+import { StyledBox } from "./box";
+import List from "@mui/material/List";
 
 export const Boxes = ({ type, array, header }) => {
   
   return (
-    <ContainerWrapper header={header}>
+    <List>
       {array.map((item) => (
-        <Box item={item.text} type={type} key={item.id} />
+        <StyledBox item={item.text} type={type} key={item.id} />
       ))}
-    </ContainerWrapper>
+    </List>
   );
 };

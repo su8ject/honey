@@ -16,6 +16,11 @@ const advantages = [
   },
 ];
 
+const boxType = {
+  advantages: "advantage",
+  comments: "comments",
+};
+
 const delivery = [
   {
     svgHash: "bike",
@@ -72,6 +77,7 @@ export {
   paymentMethod,
   delivery,
   advantages,
+  boxType,
   PRODUCTS,
   mainTitle,
 };
