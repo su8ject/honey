@@ -7,6 +7,7 @@ import { CommentPopup } from "./commentPopup";
 import { Sliderphoto } from "./slider";
 import disableScroll from "disable-scroll";
 import { mainTitle } from "../../static";
+import Container from "@mui/material/Container";
 
 export const Index = () => {
   const [comments, setComments] = useState([]);
@@ -28,7 +29,7 @@ export const Index = () => {
   };
 
   return (
-    <div className="bg">
+    <Container fixed>
       <PageTitle
         header={mainTitle.header}
         text={mainTitle.text}
@@ -51,6 +52,6 @@ export const Index = () => {
         </button>
       </div>
       <CommentPopup isPopup={isPopup} setIsPopup={setIsPopup} />
-    </div>
+    </Container>
   );
 };
