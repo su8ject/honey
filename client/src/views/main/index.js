@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { API } from "../../api";
-import { PageTitle } from "../../components/pageTitle";
+import { PageTitle } from "../../components/UI/pageTitle";
 import { advantages } from "../../static";
 import { Boxes } from "./boxes";
 import { CommentPopup } from "./commentPopup";

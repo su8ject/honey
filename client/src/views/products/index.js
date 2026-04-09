@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { API } from "../../api";
 import { Loader } from "../../components/loader";
-import { PageTitle } from "../../components/pageTitle";
+import { PageTitle } from "../../components/UI/pageTitle";
 import { ProductList } from "./productList";
 import "./style.scss";
 

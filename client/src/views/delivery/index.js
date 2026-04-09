@@ -1,6 +1,6 @@
 import { DeliveryAndPaymentMethod } from "./deliveryAndPaymentMethod";
 import { DeliveryContainer } from "./deliveryContainer";
-import { PageTitle } from "../../components/pageTitle";
+import { PageTitle } from "../../components/UI/pageTitle";
 import { delivery, paymentMethod } from "../../static";
 
 export const Delivery = () => {
