@@ -5,15 +5,11 @@ import { advantages } from "../../static";
 import { Boxes } from "./boxes";
 import { CommentPopup } from "./commentPopup";
 import { Sliderphoto } from "./slider";
-import disableScroll from "disable-scroll";
 import { mainTitle } from "../../static";
 import Container from "@mui/material/Container";
 
 export const Index = () => {
   const [comments, setComments] = useState([]);
-  const [isPopup, setIsPopup] = useState(false);
-
-  isPopup ? disableScroll.on() : disableScroll.off();
 
   async function fetchComments() {
     const response = await API.getComments();
@@ -23,10 +19,6 @@ export const Index = () => {
   useEffect(() => {
     fetchComments();
   }, []);
-
-  const onClick = () => {
-    setIsPopup(true);
-  };
 
   return (
     <Container fixed>
@@ -47,11 +39,11 @@ export const Index = () => {
         header={"Відгуки моїх клієнтів"}
       />
       <div className="buttons comment-button">
-        <button className="button" onClick={onClick}>
+        <button>
           Додати коментар
         </button>
       </div>
-      <CommentPopup isPopup={isPopup} setIsPopup={setIsPopup} />
+      <CommentPopup/>
     </Container>
   );
 };
