@@ -49,7 +49,7 @@ export const Index = () => {
           Додати коментар
         </button>
       </div>
-      <CommentPopup/>
+      <CommentPopup />
     </Container>
   );
 };

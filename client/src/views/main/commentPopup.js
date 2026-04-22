@@ -58,13 +58,13 @@ export const CommentPopup = ({ isPopup, setIsPopup }) => {
         <div className="wrapper-input">
           <textarea
             placeholder="Коментар"
-            className={cn("input", {error: !content})}
+            className={cn("input", { error: !content })}
             rows="5"
             onChange={(e) => onChange(e, "content")}
             value={content}
           ></textarea>
           <input
-            className={cn("input", {error: !name})}
+            className={cn("input", { error: !name })}
             value={name}
             onChange={(e) => onChange(e, "name")}
             placeholder="Ім’я та прізвище:"

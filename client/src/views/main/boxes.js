@@ -3,10 +3,10 @@ import { MainCard } from "./mainCard";
 import { SubTitle } from "../../components/UI/subTitle";
 
 export const Boxes = ({ type, array, header }) => {
-  
+
   return (
     <Box textAlign="center">
-      <SubTitle text={header}/>
+      <SubTitle text={header} />
       <Box
         sx={{
           width: "100%",
@@ -17,7 +17,7 @@ export const Boxes = ({ type, array, header }) => {
         {array.map((item) => (
           <MainCard item={item} type={type} key={item.id} />
         ))}
-        </Box>
+      </Box>
     </Box>
   );
 };

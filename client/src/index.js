@@ -7,4 +7,4 @@ import { APP_ID, API_KEY } from "./configs/backendless";
 Backendless.initApp(APP_ID, API_KEY);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App/>);
+root.render(<App />);

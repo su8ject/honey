@@ -12,5 +12,5 @@ export const Notification = ({ successfully, error }) => {
   };
   const content = contentNotification();
 
-  return <span className={cn("notification", {active: successfully || error}, {error})}> {content} </span>;
+  return <span className={cn("notification", { active: successfully || error }, { error })}> {content} </span>;
 };

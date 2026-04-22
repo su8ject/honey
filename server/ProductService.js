@@ -4,7 +4,7 @@ import fileService from "./fileService.js";
 class ProductService {
     async create(postproduct, imageUrl) {
         const fileName = await fileService.saveFile(imageUrl);
-        const createdProduct = await Product.create({...postproduct, imageUrl: fileName});
+        const createdProduct = await Product.create({ ...postproduct, imageUrl: fileName });
         return createdProduct;
     };
 
@@ -25,7 +25,7 @@ class ProductService {
 
     async getType(type) {
         if (!type) {
-          throw new Error("Тип не вказано");
+            throw new Error("Тип не вказано");
         }
         const productType = await Product.find({ type: type });
         return productType;
@@ -33,7 +33,7 @@ class ProductService {
 
     async getOne(id) {
         if (!id) {
-          throw new Error("ID не вказано");
+            throw new Error("ID не вказано");
         }
         const product = await Product.findById(id);
         return product;
@@ -43,7 +43,7 @@ class ProductService {
         if (!product._id) {
             throw new Error("ID не вказано");
         }
-        const updatedProduct = await Product.findByIdAndUpdate(product._id, product, {new: true});
+        const updatedProduct = await Product.findByIdAndUpdate(product._id, product, { new: true });
         return updatedProduct;
     };
 

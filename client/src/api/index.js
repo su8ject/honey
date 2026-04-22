@@ -10,29 +10,29 @@ const API = {
       },
       body: JSON.stringify(product),
     })
-    .then((res) => res.json())
-    .then((data) => console.log("Відповідь: ",data))
-    .catch((err) => console.error("Помилка: ", err));
+      .then((res) => res.json())
+      .then((data) => console.log("Відповідь: ", data))
+      .catch((err) => console.error("Помилка: ", err));
   },
 
   getProducts: async (type) => {
     if (type) {
       return fetch("http://localhost:5000/api/type/" + type)
-      .then((res) => res.json())
+        .then((res) => res.json())
     } else {
       return fetch("http://localhost:5000/api/products/")
-      .then((res) => res.json())
+        .then((res) => res.json())
     };
   },
 
   getComments: async () => {
     return fetch("http://localhost:5000/api/comments/")
-    .then((res) => res.json())
+      .then((res) => res.json())
   },
 
   getAdvantages: async () => {
     return fetch("http://localhost:5000/api/advantages/")
-    .then((res) => res.json())
+      .then((res) => res.json())
   },
 
   // removeProduct: (id) => Backendless.Data.of(Tables.GOODS).remove(id),

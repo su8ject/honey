@@ -1,4 +1,3 @@
-import { Svg } from "../../components/svg";
 import { boxType } from "../../static";
 import { StyledSvg } from "../../components/UI/styledSvg";
 import Typography from "@mui/material/Typography";
@@ -18,12 +17,12 @@ export const MainCard = ({ type, item }) => {
               justifyContent: "center",
               alignItems: "center",
             }}>
-            <StyledSvg hash={item.svgHash}/>
+            <StyledSvg hash={item.svgHash} />
             <Typography variant="h5">
               {item.header}
             </Typography>
           </Box>
-          <Typography variant="body2" sx={{color: "text.secondary"}}>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
             {item.text}
           </Typography>
         </CardContent>
@@ -31,16 +30,17 @@ export const MainCard = ({ type, item }) => {
     );
   } else {
     return (
-      <Card sx={{ display: "flex" }}>
+      <Card
+        sx={{ display: "flex" }}>
         <CardContent
           sx={{
             width: "100%",
             display: "flex",
             flexDirection: "column",
             flexGrow: 1,
-            padding: "10px" 
+            padding: "10px"
           }}>
-          <Typography variant="body2" sx={{color: "text.secondary"}}>
+          <Typography variant="body2" sx={{ color: "text.secondary" }}>
             {item.text}
           </Typography>
           <Box
@@ -51,7 +51,7 @@ export const MainCard = ({ type, item }) => {
               alignItems: "center",
               mt: "auto",
             }}>
-            <StyledSvg hash="chat"/>
+            <StyledSvg hash="chat" />
             <Typography variant="h5">
               {item.header}
             </Typography>
