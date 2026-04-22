@@ -6,6 +6,7 @@ import { CommentPopup } from "./commentPopup";
 import { Sliderphoto } from "./slider";
 import { mainTitle } from "../../static";
 import Container from "@mui/material/Container";
+import { SubTitle } from "../../components/UI/subTitle";
 
 export const Index = () => {
   const [comments, setComments] = useState([]);
@@ -37,7 +38,7 @@ export const Index = () => {
         array={advantages}
         header={"Чому купувати мед саме у мене?"}
       />
-      <h2 className="primary-header">Фото моєї пасіки</h2>
+      <SubTitle text={"Фото моєї пасіки"} />
       <Sliderphoto />
       <Boxes
         type={"comments"}
