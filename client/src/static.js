@@ -17,7 +17,7 @@ const advantages = [
 ];
 
 const boxType = {
-  advantages: "advantage",
+  advantages: "advantages",
   comments: "comments",
 };
 

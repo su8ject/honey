@@ -1,6 +1,3 @@
-import Backendless from "backendless";
-import { Tables } from "../constants/index";
-
 const API = {
   /* login: (password) =>
     Backendless.BL.CustomServices.invoke("simple_login", "login", password), */
@@ -30,6 +27,11 @@ const API = {
 
   getComments: async () => {
     return fetch("http://localhost:5000/api/comments/")
+    .then((res) => res.json())
+  },
+
+  getAdvantages: async () => {
+    return fetch("http://localhost:5000/api/advantages/")
     .then((res) => res.json())
   },
 

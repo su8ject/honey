@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { API } from "../../api";
 import { PageTitle } from "../../components/UI/pageTitle";
-import { advantages } from "../../static";
 import { Boxes } from "./boxes";
 import { CommentPopup } from "./commentPopup";
 import { Sliderphoto } from "./slider";
@@ -10,14 +9,21 @@ import Container from "@mui/material/Container";
 
 export const Index = () => {
   const [comments, setComments] = useState([]);
+  const [advantages, setAdvantages] = useState([]);
 
   async function fetchComments() {
     const response = await API.getComments();
     setComments(response);
   };
 
+  async function fetchAdvantages() {
+    const responce = await API.getAdvantages();
+    setAdvantages(responce);
+  };
+
   useEffect(() => {
     fetchComments();
+    fetchAdvantages();
   }, []);
 
   return (
