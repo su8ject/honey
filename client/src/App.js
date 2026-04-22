@@ -1,5 +1,4 @@
 import { HashRouter } from "react-router-dom";
-import { ActivePanel } from "./components/activePanel";
 import { AppRouter } from "./components/appRouter";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
@@ -16,7 +15,6 @@ function App() {
       {inputGlobalStyles}
       <HashRouter>
         <Header />
-        <ActivePanel />
         <AppRouter />
         <Footer />
       </HashRouter>
