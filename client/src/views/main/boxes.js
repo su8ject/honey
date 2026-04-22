@@ -5,7 +5,7 @@ import { SubTitle } from "../../components/UI/subTitle";
 export const Boxes = ({ type, array, header }) => {
 
   return (
-    <Box textAlign="center">
+    <Box>
       <SubTitle text={header} />
       <Box
         sx={{
