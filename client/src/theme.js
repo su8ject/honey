@@ -26,9 +26,16 @@ export const theme = createTheme({
         },
         MuiMenu: {
             styleOverrides: {
-                paper: {
-                    backgroundColor: "#fedb6d",
-                },
+                paper: ({ theme }) => ({
+                    backgroundColor: theme.palette.primary.light,
+                }),
+            },
+        },
+        MuiCard: {
+            styleOverrides: {
+                root: ({ theme }) => ({
+                    backgroundColor: theme.palette.primary.light,
+                }),
             },
         },
     },
