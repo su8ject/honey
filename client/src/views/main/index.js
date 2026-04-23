@@ -7,6 +7,7 @@ import { Sliderphoto } from "./slider";
 import { mainTitle } from "../../static";
 import Container from "@mui/material/Container";
 import { SubTitle } from "../../components/UI/subTitle";
+import { ApiaryGalery } from "./apiaryGalery";
 
 export const Index = () => {
   const [comments, setComments] = useState([]);
@@ -39,7 +40,7 @@ export const Index = () => {
         header={"Чому купувати мед саме у мене?"}
       />
       <SubTitle text={"Фото моєї пасіки"} />
-      <Sliderphoto />
+      <ApiaryGalery />
       <Boxes
         type={"comments"}
         array={comments}
