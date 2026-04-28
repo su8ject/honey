@@ -8,7 +8,7 @@ export const ApiaryGalery = () => {
 
     return (
         <ImageList
-            sx={{ width: 500, height: 450 }}
+            sx={{ width: "100%" }}
             variant="quilted"
             cols={3}
             rowHeight={121}
