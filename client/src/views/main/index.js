@@ -8,6 +8,8 @@ import { mainTitle } from "../../static";
 import Container from "@mui/material/Container";
 import { SubTitle } from "../../components/UI/subTitle";
 import { ApiaryGalery } from "./apiaryGalery";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 
 export const Index = () => {
   const [comments, setComments] = useState([]);
@@ -47,9 +49,18 @@ export const Index = () => {
         header={"Відгуки моїх клієнтів"}
       />
       <div className="buttons comment-button">
-        <button>
-          Додати коментар
-        </button>
+        <Box
+          sx={{
+            width: "100%",
+            paddingTop: "20px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
+          <Button variant="contained">
+            Додати коментар
+          </Button>
+        </Box>
       </div>
       <CommentPopup />
     </Container>
